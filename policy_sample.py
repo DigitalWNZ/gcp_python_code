@@ -82,6 +82,7 @@ if __name__ == '__main__':
     iam_policy=dp_client.get_iam_policy(request=request)
 
     user="user:wangez@google.com"
+    # gcp role reference--https://cloud.google.com/iam/docs/understanding-roles
     role="roles/bigquerydatapolicy.maskedReader"
     nb=policy_pb2.Binding(role=role,members={user})
     iam_policy.bindings.append(nb)
