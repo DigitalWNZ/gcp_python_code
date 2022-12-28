@@ -36,7 +36,7 @@ if __name__ == '__main__':
     # add findgrained reader role to policy tag
     policyTag = policy_tag.name
     # The policy tag below are for test purpose
-    policyTag="projects/agolis-allen-first/locations/us/taxonomies/5795552885058236759/policyTags/5837399662345023402"
+    # policyTag="projects/agolis-allen-first/locations/us/taxonomies/5795552885058236759/policyTags/5837399662345023402"
 
     request=iam_policy_pb2.GetIamPolicyRequest(
         resource=policyTag
@@ -56,7 +56,7 @@ if __name__ == '__main__':
     dp_client= datapolicies_v1.DataPolicyServiceClient()
     # add data policy to policy tag
     # The policy tag are for test purpose
-    policyTag = "projects/agolis-allen-first/locations/us/taxonomies/5795552885058236759/policyTags/5837399662345023402"
+    # policyTag = "projects/agolis-allen-first/locations/us/taxonomies/5795552885058236759/policyTags/5837399662345023402"
     dp=datapolicies_v1.DataPolicy()
     dp.data_policy_type=datapolicies_v1.types.DataPolicy.DataPolicyType.DATA_MASKING_POLICY
     dp.data_policy_id='test_dp3'
@@ -75,7 +75,7 @@ if __name__ == '__main__':
     # set IAM for the data policy
     dp_name=dp.name
     # the dp_name below is for test purpose
-    dp_name='projects/agolis-allen-first/locations/us/dataPolicies/test_dp3'
+    # dp_name='projects/agolis-allen-first/locations/us/dataPolicies/test_dp3'
     request=iam_policy_pb2.GetIamPolicyRequest(
         resource=dp_name
     )
@@ -93,7 +93,7 @@ if __name__ == '__main__':
 
     #update table schema with policy tag
     # The policyTag are for test purpose
-    policyTag = "projects/agolis-allen-first/locations/us/taxonomies/5795552885058236759/policyTags/5837399662345023402"
+    # policyTag = "projects/agolis-allen-first/locations/us/taxonomies/5795552885058236759/policyTags/5837399662345023402"
     bq_client=bigquery.Client()
     tb=bq_client.get_table('agolis-allen-first.ELM.cpu_model')
 
