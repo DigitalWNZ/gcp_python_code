@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="92a03f30-5245-4714-b1e0-8b6f4c46ab35" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mask_message.py" beforeDir="false" afterPath="$PROJECT_DIR$/mask_message.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +30,28 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.mask_flag">
+    <configuration name="mask_flag" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="gcp_python_code" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mask_flag.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="mask_message" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="gcp_python_code" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -53,6 +75,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.mask_flag" />
         <item itemvalue="Python.mask_message" />
       </list>
     </recent_temporary>
@@ -69,38 +92,38 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1771" height="272" key="GridCell.Tab.0.bottom" timestamp="1672242767431">
+    <state width="1771" height="336" key="GridCell.Tab.0.bottom" timestamp="1672313075423">
       <screen x="0" y="25" width="1792" height="1010" />
     </state>
-    <state width="1771" height="272" key="GridCell.Tab.0.bottom/0.25.1792.1010@0.25.1792.1010" timestamp="1672242767431" />
-    <state width="1771" height="272" key="GridCell.Tab.0.center" timestamp="1672242767430">
+    <state width="1771" height="336" key="GridCell.Tab.0.bottom/0.25.1792.1010@0.25.1792.1010" timestamp="1672313075423" />
+    <state width="1771" height="336" key="GridCell.Tab.0.center" timestamp="1672313075422">
       <screen x="0" y="25" width="1792" height="1010" />
     </state>
-    <state width="1771" height="272" key="GridCell.Tab.0.center/0.25.1792.1010@0.25.1792.1010" timestamp="1672242767430" />
-    <state width="1771" height="272" key="GridCell.Tab.0.left" timestamp="1672242767430">
+    <state width="1771" height="336" key="GridCell.Tab.0.center/0.25.1792.1010@0.25.1792.1010" timestamp="1672313075422" />
+    <state width="1771" height="336" key="GridCell.Tab.0.left" timestamp="1672313075422">
       <screen x="0" y="25" width="1792" height="1010" />
     </state>
-    <state width="1771" height="272" key="GridCell.Tab.0.left/0.25.1792.1010@0.25.1792.1010" timestamp="1672242767430" />
-    <state width="1771" height="272" key="GridCell.Tab.0.right" timestamp="1672242767431">
+    <state width="1771" height="336" key="GridCell.Tab.0.left/0.25.1792.1010@0.25.1792.1010" timestamp="1672313075422" />
+    <state width="1771" height="336" key="GridCell.Tab.0.right" timestamp="1672313075423">
       <screen x="0" y="25" width="1792" height="1010" />
     </state>
-    <state width="1771" height="272" key="GridCell.Tab.0.right/0.25.1792.1010@0.25.1792.1010" timestamp="1672242767431" />
-    <state width="1771" height="336" key="GridCell.Tab.1.bottom" timestamp="1672242505285">
+    <state width="1771" height="336" key="GridCell.Tab.0.right/0.25.1792.1010@0.25.1792.1010" timestamp="1672313075423" />
+    <state width="1771" height="336" key="GridCell.Tab.1.bottom" timestamp="1672313078784">
       <screen x="0" y="25" width="1792" height="1010" />
     </state>
-    <state width="1771" height="336" key="GridCell.Tab.1.bottom/0.25.1792.1010@0.25.1792.1010" timestamp="1672242505285" />
-    <state width="1771" height="336" key="GridCell.Tab.1.center" timestamp="1672242505285">
+    <state width="1771" height="336" key="GridCell.Tab.1.bottom/0.25.1792.1010@0.25.1792.1010" timestamp="1672313078784" />
+    <state width="1771" height="336" key="GridCell.Tab.1.center" timestamp="1672313078784">
       <screen x="0" y="25" width="1792" height="1010" />
     </state>
-    <state width="1771" height="336" key="GridCell.Tab.1.center/0.25.1792.1010@0.25.1792.1010" timestamp="1672242505285" />
-    <state width="1771" height="336" key="GridCell.Tab.1.left" timestamp="1672242505285">
+    <state width="1771" height="336" key="GridCell.Tab.1.center/0.25.1792.1010@0.25.1792.1010" timestamp="1672313078784" />
+    <state width="1771" height="336" key="GridCell.Tab.1.left" timestamp="1672313078783">
       <screen x="0" y="25" width="1792" height="1010" />
     </state>
-    <state width="1771" height="336" key="GridCell.Tab.1.left/0.25.1792.1010@0.25.1792.1010" timestamp="1672242505285" />
-    <state width="1771" height="336" key="GridCell.Tab.1.right" timestamp="1672242505285">
+    <state width="1771" height="336" key="GridCell.Tab.1.left/0.25.1792.1010@0.25.1792.1010" timestamp="1672313078783" />
+    <state width="1771" height="336" key="GridCell.Tab.1.right" timestamp="1672313078784">
       <screen x="0" y="25" width="1792" height="1010" />
     </state>
-    <state width="1771" height="336" key="GridCell.Tab.1.right/0.25.1792.1010@0.25.1792.1010" timestamp="1672242505285" />
+    <state width="1771" height="336" key="GridCell.Tab.1.right/0.25.1792.1010@0.25.1792.1010" timestamp="1672313078784" />
     <state x="405" y="166" key="SettingsEditor" timestamp="1672194785996">
       <screen x="0" y="25" width="1792" height="1010" />
     </state>
@@ -122,6 +145,16 @@
           <url>file://$PROJECT_DIR$/mask_message.py</url>
           <line>85</line>
           <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/mask_message.py</url>
+          <line>64</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/mask_flag.py</url>
+          <line>17</line>
+          <option name="timeStamp" value="24" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

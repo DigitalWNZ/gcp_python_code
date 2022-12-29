@@ -11,7 +11,7 @@ if __name__ == '__main__':
     dc_client=datacatalog_v1.PolicyTagManagerClient()
     dp_client=datapolicies_v1.DataPolicyServiceClient()
     client=bigquery.Client()
-    sql='SELECT ccore FROM `agolis-allen-first.ELM.cpu_model` LIMIT 1'
+    sql='SELECT ccore  as c FROM `agolis-allen-first.ELM.cpu_model` LIMIT 1'
     query_job = client.query(sql)
 
     r'''
