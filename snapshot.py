@@ -11,6 +11,7 @@ from google.cloud import bigquery,storage
 from google.cloud import bigquery_v2
 from datetime import date,timedelta,datetime
 import time
+from datetime import datetime,timezone
 import requests
 
 def validate_project(client,proj_id):
@@ -63,7 +64,7 @@ if __name__ == '__main__':
     # pattern = re.compile(table_pattern, re.IGNORECASE)
     # found = pattern.findall(name)
 
-    path_to_credential = '/Users/wangez/Downloads/allen-first-8d361c053705.json'
+    path_to_credential = '/Users/wangez/Downloads/GCP_Credentials/agolis-allen-first-2a651eae4ca4.json'
     sheet_url = 'https://docs.google.com/spreadsheets/d/1u64Ig0w6Vk7zYEVGs-QSCg1eQtrlcT26kvMe6TuXbpw/edit?usp=sharing&resourcekey=0-S1BJoHiMuQkKMMFp_JplLw'
     getid = '^.*/d/(.*)/.*$'
     pattern = re.compile(getid, re.IGNORECASE)
@@ -205,6 +206,10 @@ if __name__ == '__main__':
         raise ValueError('There are duplicate tables specified in the input files, please check in the input')
 
     print('----------------Phase 2 - Processing Tables ----------------')
+    current_ts=datetime.now()
+    exp_ts=current_ts + timedelta(days=7)
+    exp_ts_str=str(exp_ts.replace(tzinfo=timezone.utc).isoformat())
+
     for item in list_ops_by_phy_table:
         input_project=item['input_project']
         input_dataset=item['input_dataset']
@@ -234,6 +239,7 @@ if __name__ == '__main__':
         if validate_table(client,dest_tbl_id):
                 raise ValueError('Table {} already exist, please give a new table name.'.format(dest_table))
 
+
         bq_endpoint = 'https://bigquery.googleapis.com/bigquery/v2/projects/{}/jobs'.format(input_project)
 
         request_body=json.dumps({
@@ -252,7 +258,8 @@ if __name__ == '__main__':
                             "tableId": dest_table
                           },
                           "operationType": "SNAPSHOT",
-                          "writeDisposition": "WRITE_TRUNCATE",
+                          "writeDisposition": "WRITE_EMPTY",
+                          "destinationExpirationTime": exp_ts_str
                         }
                       }
                     })

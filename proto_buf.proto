@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+message SomeMessage {
+
+    message Asset {
+        repeated string ancestors = 1;
+        string assetType = 2;
+    }
+
+    message Priorasset {
+        repeated string ancestors = 1;
+        string assetType = 2;
+    }
+
+    message Window {
+        string startTime = 1;
+    }
+
+    Asset asset = 1;
+    Priorasset priorAsset = 2;
+    string priorAssetState = 3;
+    Window window = 4;
+}
