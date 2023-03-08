@@ -225,9 +225,9 @@ if __name__ == '__main__':
             dest_dataset=input_dataset + '_snapshot'
             snap_dataset_id=dest_project + '.' + dest_dataset
             if not validate_dataset(client,snap_dataset_id):
-                snap_dataset=client.dataset(snap_dataset_id)
+                snap_dataset_ref=client.dataset(snap_dataset_id)
                 snap_dataset.location =location
-                snap_dataset=client.create_dataset(snap_dataset_id,timeout=30)
+                snap_dataset=client.create_dataset(snap_dataset,timeout=30)
         else:
             snap_dataset_id = dest_project + '.' + dest_dataset
             if not validate_dataset(snap_dataset_id):

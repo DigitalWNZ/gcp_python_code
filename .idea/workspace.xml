@@ -30,8 +30,8 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.snapshot">
-    <configuration name="bq_params_array_struct" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.bq_snapshot_zz">
+    <configuration name="bq_snapshot_v1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="gcp_python_code" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -43,7 +43,28 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/bq_params_array_struct.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/bq_snapshot_v1.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="bq_snapshot_zz" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="gcp_python_code" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/bq_snapshot_zz.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -65,27 +86,6 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/bq_storage_read_sample.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="mask_flag" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="gcp_python_code" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mask_flag.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -138,11 +138,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.bq_snapshot_zz" />
+        <item itemvalue="Python.bq_snapshot_v1" />
+        <item itemvalue="Python.bq_storage_read_sample" />
         <item itemvalue="Python.snapshot" />
         <item itemvalue="Python.pubsub_protobuf_test" />
-        <item itemvalue="Python.bq_storage_read_sample" />
-        <item itemvalue="Python.bq_params_array_struct" />
-        <item itemvalue="Python.mask_flag" />
       </list>
     </recent_temporary>
   </component>
@@ -162,75 +162,88 @@
       <screen x="0" y="25" width="1792" height="1010" />
     </state>
     <state x="600" y="336" key="#com.intellij.fileTypes.FileTypeChooser/0.25.1792.1010/-1150.-2135.3840.2135@0.25.1792.1010" timestamp="1675160598759" />
-    <state width="1771" height="272" key="GridCell.Tab.0.bottom" timestamp="1677138203719">
-      <screen x="0" y="25" width="1792" height="1010" />
+    <state width="2539" height="357" key="GridCell.Tab.0.bottom" timestamp="1677839095293">
+      <screen x="-410" y="-1415" width="2560" height="1415" />
     </state>
     <state width="3819" height="336" key="GridCell.Tab.0.bottom/0.25.1792.1010/-1150.-2135.3840.2135@-1150.-2135.3840.2135" timestamp="1675169267605" />
     <state width="1771" height="336" key="GridCell.Tab.0.bottom/0.25.1792.1010/-1150.-2135.3840.2135@0.25.1792.1010" timestamp="1675167804657" />
-    <state width="1771" height="272" key="GridCell.Tab.0.bottom/0.25.1792.1010/-410.-1415.2560.1415@0.25.1792.1010" timestamp="1677138203719" />
+    <state width="2539" height="357" key="GridCell.Tab.0.bottom/0.25.1792.1010/-410.-1415.2560.1415@-410.-1415.2560.1415" timestamp="1677839095293" />
+    <state width="1771" height="349" key="GridCell.Tab.0.bottom/0.25.1792.1010/-410.-1415.2560.1415@0.25.1792.1010" timestamp="1677752471018" />
     <state width="1771" height="272" key="GridCell.Tab.0.bottom/0.25.1792.1010@0.25.1792.1010" timestamp="1672313240855" />
     <state width="1771" height="272" key="GridCell.Tab.0.bottom/0.25.1792.1013/-1150.-2135.3840.2135@0.25.1792.1013" timestamp="1675167445324" />
-    <state width="1771" height="272" key="GridCell.Tab.0.center" timestamp="1677138203719">
-      <screen x="0" y="25" width="1792" height="1010" />
+    <state width="2539" height="357" key="GridCell.Tab.0.center" timestamp="1677839095292">
+      <screen x="-410" y="-1415" width="2560" height="1415" />
     </state>
     <state width="3819" height="336" key="GridCell.Tab.0.center/0.25.1792.1010/-1150.-2135.3840.2135@-1150.-2135.3840.2135" timestamp="1675169267605" />
     <state width="1771" height="336" key="GridCell.Tab.0.center/0.25.1792.1010/-1150.-2135.3840.2135@0.25.1792.1010" timestamp="1675167804657" />
-    <state width="1771" height="272" key="GridCell.Tab.0.center/0.25.1792.1010/-410.-1415.2560.1415@0.25.1792.1010" timestamp="1677138203719" />
+    <state width="2539" height="357" key="GridCell.Tab.0.center/0.25.1792.1010/-410.-1415.2560.1415@-410.-1415.2560.1415" timestamp="1677839095292" />
+    <state width="1771" height="349" key="GridCell.Tab.0.center/0.25.1792.1010/-410.-1415.2560.1415@0.25.1792.1010" timestamp="1677752471018" />
     <state width="1771" height="272" key="GridCell.Tab.0.center/0.25.1792.1010@0.25.1792.1010" timestamp="1672313240854" />
     <state width="1771" height="272" key="GridCell.Tab.0.center/0.25.1792.1013/-1150.-2135.3840.2135@0.25.1792.1013" timestamp="1675167445324" />
-    <state width="1771" height="272" key="GridCell.Tab.0.left" timestamp="1677138203718">
-      <screen x="0" y="25" width="1792" height="1010" />
+    <state width="2539" height="357" key="GridCell.Tab.0.left" timestamp="1677839095292">
+      <screen x="-410" y="-1415" width="2560" height="1415" />
     </state>
     <state width="3819" height="336" key="GridCell.Tab.0.left/0.25.1792.1010/-1150.-2135.3840.2135@-1150.-2135.3840.2135" timestamp="1675169267605" />
     <state width="1771" height="336" key="GridCell.Tab.0.left/0.25.1792.1010/-1150.-2135.3840.2135@0.25.1792.1010" timestamp="1675167804656" />
-    <state width="1771" height="272" key="GridCell.Tab.0.left/0.25.1792.1010/-410.-1415.2560.1415@0.25.1792.1010" timestamp="1677138203718" />
+    <state width="2539" height="357" key="GridCell.Tab.0.left/0.25.1792.1010/-410.-1415.2560.1415@-410.-1415.2560.1415" timestamp="1677839095292" />
+    <state width="1771" height="349" key="GridCell.Tab.0.left/0.25.1792.1010/-410.-1415.2560.1415@0.25.1792.1010" timestamp="1677752471017" />
     <state width="1771" height="272" key="GridCell.Tab.0.left/0.25.1792.1010@0.25.1792.1010" timestamp="1672313240854" />
     <state width="1771" height="272" key="GridCell.Tab.0.left/0.25.1792.1013/-1150.-2135.3840.2135@0.25.1792.1013" timestamp="1675167445323" />
-    <state width="1771" height="272" key="GridCell.Tab.0.right" timestamp="1677138203719">
-      <screen x="0" y="25" width="1792" height="1010" />
+    <state width="2539" height="357" key="GridCell.Tab.0.right" timestamp="1677839095293">
+      <screen x="-410" y="-1415" width="2560" height="1415" />
     </state>
     <state width="3819" height="336" key="GridCell.Tab.0.right/0.25.1792.1010/-1150.-2135.3840.2135@-1150.-2135.3840.2135" timestamp="1675169267605" />
     <state width="1771" height="336" key="GridCell.Tab.0.right/0.25.1792.1010/-1150.-2135.3840.2135@0.25.1792.1010" timestamp="1675167804657" />
-    <state width="1771" height="272" key="GridCell.Tab.0.right/0.25.1792.1010/-410.-1415.2560.1415@0.25.1792.1010" timestamp="1677138203719" />
+    <state width="2539" height="357" key="GridCell.Tab.0.right/0.25.1792.1010/-410.-1415.2560.1415@-410.-1415.2560.1415" timestamp="1677839095293" />
+    <state width="1771" height="349" key="GridCell.Tab.0.right/0.25.1792.1010/-410.-1415.2560.1415@0.25.1792.1010" timestamp="1677752471018" />
     <state width="1771" height="272" key="GridCell.Tab.0.right/0.25.1792.1010@0.25.1792.1010" timestamp="1672313240855" />
     <state width="1771" height="272" key="GridCell.Tab.0.right/0.25.1792.1013/-1150.-2135.3840.2135@0.25.1792.1013" timestamp="1675167445324" />
-    <state width="1771" height="349" key="GridCell.Tab.1.bottom" timestamp="1677137905824">
-      <screen x="0" y="25" width="1792" height="1010" />
+    <state width="2539" height="357" key="GridCell.Tab.1.bottom" timestamp="1677839095294">
+      <screen x="-410" y="-1415" width="2560" height="1415" />
     </state>
     <state width="3819" height="336" key="GridCell.Tab.1.bottom/0.25.1792.1010/-1150.-2135.3840.2135@-1150.-2135.3840.2135" timestamp="1675169267606" />
     <state width="1771" height="336" key="GridCell.Tab.1.bottom/0.25.1792.1010/-1150.-2135.3840.2135@0.25.1792.1010" timestamp="1675167768536" />
-    <state width="1771" height="349" key="GridCell.Tab.1.bottom/0.25.1792.1010/-410.-1415.2560.1415@0.25.1792.1010" timestamp="1677137905824" />
+    <state width="2539" height="357" key="GridCell.Tab.1.bottom/0.25.1792.1010/-410.-1415.2560.1415@-410.-1415.2560.1415" timestamp="1677839095294" />
+    <state width="1771" height="349" key="GridCell.Tab.1.bottom/0.25.1792.1010/-410.-1415.2560.1415@0.25.1792.1010" timestamp="1677752475883" />
     <state width="1771" height="336" key="GridCell.Tab.1.bottom/0.25.1792.1010@0.25.1792.1010" timestamp="1672313240850" />
-    <state width="1771" height="349" key="GridCell.Tab.1.center" timestamp="1677137905823">
-      <screen x="0" y="25" width="1792" height="1010" />
+    <state width="2539" height="357" key="GridCell.Tab.1.center" timestamp="1677839095293">
+      <screen x="-410" y="-1415" width="2560" height="1415" />
     </state>
     <state width="3819" height="336" key="GridCell.Tab.1.center/0.25.1792.1010/-1150.-2135.3840.2135@-1150.-2135.3840.2135" timestamp="1675169267606" />
     <state width="1771" height="336" key="GridCell.Tab.1.center/0.25.1792.1010/-1150.-2135.3840.2135@0.25.1792.1010" timestamp="1675167768535" />
-    <state width="1771" height="349" key="GridCell.Tab.1.center/0.25.1792.1010/-410.-1415.2560.1415@0.25.1792.1010" timestamp="1677137905823" />
+    <state width="2539" height="357" key="GridCell.Tab.1.center/0.25.1792.1010/-410.-1415.2560.1415@-410.-1415.2560.1415" timestamp="1677839095293" />
+    <state width="1771" height="349" key="GridCell.Tab.1.center/0.25.1792.1010/-410.-1415.2560.1415@0.25.1792.1010" timestamp="1677752475883" />
     <state width="1771" height="336" key="GridCell.Tab.1.center/0.25.1792.1010@0.25.1792.1010" timestamp="1672313240850" />
-    <state width="1771" height="349" key="GridCell.Tab.1.left" timestamp="1677137905823">
-      <screen x="0" y="25" width="1792" height="1010" />
+    <state width="2539" height="357" key="GridCell.Tab.1.left" timestamp="1677839095293">
+      <screen x="-410" y="-1415" width="2560" height="1415" />
     </state>
     <state width="3819" height="336" key="GridCell.Tab.1.left/0.25.1792.1010/-1150.-2135.3840.2135@-1150.-2135.3840.2135" timestamp="1675169267605" />
     <state width="1771" height="336" key="GridCell.Tab.1.left/0.25.1792.1010/-1150.-2135.3840.2135@0.25.1792.1010" timestamp="1675167768535" />
-    <state width="1771" height="349" key="GridCell.Tab.1.left/0.25.1792.1010/-410.-1415.2560.1415@0.25.1792.1010" timestamp="1677137905823" />
+    <state width="2539" height="357" key="GridCell.Tab.1.left/0.25.1792.1010/-410.-1415.2560.1415@-410.-1415.2560.1415" timestamp="1677839095293" />
+    <state width="1771" height="349" key="GridCell.Tab.1.left/0.25.1792.1010/-410.-1415.2560.1415@0.25.1792.1010" timestamp="1677752475882" />
     <state width="1771" height="336" key="GridCell.Tab.1.left/0.25.1792.1010@0.25.1792.1010" timestamp="1672313240850" />
-    <state width="1771" height="349" key="GridCell.Tab.1.right" timestamp="1677137905823">
-      <screen x="0" y="25" width="1792" height="1010" />
+    <state width="2539" height="357" key="GridCell.Tab.1.right" timestamp="1677839095294">
+      <screen x="-410" y="-1415" width="2560" height="1415" />
     </state>
     <state width="3819" height="336" key="GridCell.Tab.1.right/0.25.1792.1010/-1150.-2135.3840.2135@-1150.-2135.3840.2135" timestamp="1675169267606" />
     <state width="1771" height="336" key="GridCell.Tab.1.right/0.25.1792.1010/-1150.-2135.3840.2135@0.25.1792.1010" timestamp="1675167768536" />
-    <state width="1771" height="349" key="GridCell.Tab.1.right/0.25.1792.1010/-410.-1415.2560.1415@0.25.1792.1010" timestamp="1677137905823" />
+    <state width="2539" height="357" key="GridCell.Tab.1.right/0.25.1792.1010/-410.-1415.2560.1415@-410.-1415.2560.1415" timestamp="1677839095294" />
+    <state width="1771" height="349" key="GridCell.Tab.1.right/0.25.1792.1010/-410.-1415.2560.1415@0.25.1792.1010" timestamp="1677752475883" />
     <state width="1771" height="336" key="GridCell.Tab.1.right/0.25.1792.1010@0.25.1792.1010" timestamp="1672313240850" />
     <state x="405" y="166" key="SettingsEditor" timestamp="1672194785996">
       <screen x="0" y="25" width="1792" height="1010" />
     </state>
     <state x="405" y="166" key="SettingsEditor/0.25.1792.1010/-1150.-2135.3840.2135@0.25.1792.1010" timestamp="1672194785996" />
-    <state width="896" height="505" key="XDebugger.FullValuePopup" timestamp="1677137732374">
-      <screen x="0" y="25" width="1792" height="1010" />
+    <state width="1280" height="708" key="XDebugger.FullValuePopup" timestamp="1677825819102">
+      <screen x="-410" y="-1415" width="2560" height="1415" />
     </state>
+    <state width="1280" height="708" key="XDebugger.FullValuePopup/0.25.1792.1010/-410.-1415.2560.1415@-410.-1415.2560.1415" timestamp="1677825819102" />
     <state width="896" height="505" key="XDebugger.FullValuePopup/0.25.1792.1010/-410.-1415.2560.1415@0.25.1792.1010" timestamp="1677137732374" />
     <state width="896" height="505" key="XDebugger.FullValuePopup/0.25.1792.1010@0.25.1792.1010" timestamp="1672241001840" />
+    <state x="535" y="-1091" width="670" height="676" key="search.everywhere.popup" timestamp="1677827611158">
+      <screen x="-410" y="-1415" width="2560" height="1415" />
+    </state>
+    <state x="535" y="-1091" width="670" height="676" key="search.everywhere.popup/0.25.1792.1010/-410.-1415.2560.1415@-410.-1415.2560.1415" timestamp="1677827611158" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -274,6 +287,21 @@
           <url>file://$PROJECT_DIR$/snapshot.py</url>
           <line>212</line>
           <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/bq_snapshot_zz.py</url>
+          <line>215</line>
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/bq_snapshot_v1.py</url>
+          <line>170</line>
+          <option name="timeStamp" value="39" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/bq_snapshot_v1.py</url>
+          <line>210</line>
+          <option name="timeStamp" value="41" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
