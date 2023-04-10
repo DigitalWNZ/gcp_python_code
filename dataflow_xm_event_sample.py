@@ -119,8 +119,8 @@ class format_result_for_bq(beam.DoFn):
            yield {
                'uid': element[1].get('uid'),
                'data': element[0],
-               'status': element[2],
-               'test':'test'
+               'status': element[2]
+               # 'test':'test'
            }
        except Exception as err:
            step_name = 'format BQ result'
