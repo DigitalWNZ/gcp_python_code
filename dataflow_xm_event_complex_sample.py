@@ -82,12 +82,17 @@ class businessLogic(beam.DoFn):
         try:
             # print("business Logic Start")
             if element[2] == OUTPUT_TAG_NEW:
+                client=bigquery.Client()
+                query="insert into `agolis-allen-first.experiment.dataflow_enrich` values ('{}','{}','{}')"\
+                    .format(element[1].get('uid'),element[0],element[2])
+                query_job = client.query(query)
+                result = query_job.result()
                 print('Main business logic for new')
                 res=(element[0],element[1],'complete')
                 yield beam.pvalue.TaggedOutput(OUTPUT_TAG_NEW,res)
             elif element[2] == OUTPUT_TAG_INCOMPLETE:
-                res = (element[0], element[1], 'complete')
                 print('Main business logic for incomplete')
+                res = (element[0], element[1], 'complete')
                 yield beam.pvalue.TaggedOutput(OUTPUT_TAG_INCOMPLETE,res)
             else:
                 print('Main business logic for complete')
@@ -124,8 +129,8 @@ class format_result_for_bq(beam.DoFn):
            yield {
                'uid': element[1].get('uid'),
                'data': element[0],
-               'status': element[2]
-               # 'test':'test'
+               'status': element[2],
+               'test':'test'
            }
        except Exception as err:
            step_name = 'format BQ result'
@@ -212,50 +217,6 @@ def run(argv=None,save_main_session=True):
         mainData |'enrich by bigquery client' >> beam.ParDo(enrichByBQClient()).with_outputs(OUTPUT_TAG_FAILURE,main='outputs')
     )
 
-    # The following code (from next line to ########### )leverage single output and retrieve different tag by processData[TAG] to get data.
-    # processData=(
-    #     enrichData | 'business logic' >> beam.ParDo(businessLogic()).with_outputs(
-    #                             OUTPUT_TAG_FAILURE,
-    #                             OUTPUT_TAG_COMPLETE,
-    #                             OUTPUT_TAG_INCOMPLETE,
-    #                             OUTPUT_TAG_NEW
-    #     )
-    # )
-    #
-    # completePipeline=(
-    #     processData[OUTPUT_TAG_COMPLETE]
-    #     |'format complete data output'>> beam.ParDo(format_result_for_bq())
-    #     |'write complete data to bq' >> beam.io.WriteToBigQuery(
-    #         table='agolis-allen-first:experiment.dataflow_duplicate',
-    #         create_disposition=beam.io.BigQueryDisposition.CREATE_IF_NEEDED,
-    #         write_disposition=beam.io.BigQueryDisposition.WRITE_APPEND
-    #     )
-    # )
-    #
-    # insertPipeline=(
-    #     processData[OUTPUT_TAG_NEW]
-    #     |'format new data output'>> beam.ParDo(format_result_for_bq())
-    #     |'write new data to bq' >> beam.io.WriteToBigQuery(
-    #         table='agolis-allen-first:experiment.dataflow_enrich',
-    #         create_disposition=beam.io.BigQueryDisposition.CREATE_IF_NEEDED,
-    #         write_disposition=beam.io.BigQueryDisposition.WRITE_APPEND
-    #     )
-    # )
-    #
-    # inCompletePipeline,failure_updateRow =(
-    #     processData[OUTPUT_TAG_INCOMPLETE]
-    #     |'update incomplete data in bq' >> beam.ParDo(updateRow()).with_outputs(OUTPUT_TAG_FAILURE,main='outputs')
-    # )
-    #
-    # # flattern returns [(xxx)]
-    # all_failure=(failure_extractElement,failure_enrich,processData[OUTPUT_TAG_FAILURE],failure_updateRow)\
-    #             |"All Failure PCollection" >> beam.Flatten()\
-    #             |"print all" >> beam.ParDo(format_data_for_pb())\
-    #             |"send back to pubsub" >> beam.io.WriteToPubSub(
-    #                 topic="projects/agolis-allen-first/topics/bigquery_demo",
-    #                 with_attributes=True
-    #             )
-    ##################################
 
     #
     # The following code leverage tags for different output directly.
@@ -268,19 +229,11 @@ def run(argv=None,save_main_session=True):
         )
     )
 
-    newPipeline=(
+    newPipeline,failure_update_newPipeline=(
         newData
-        |'format new data output'>> beam.ParDo(format_result_for_bq())
-        |'write new data to bq' >> beam.io.WriteToBigQuery(
-            table='agolis-allen-first:experiment.dataflow_enrich',
-            create_disposition=beam.io.BigQueryDisposition.CREATE_IF_NEEDED,
-            write_disposition=beam.io.BigQueryDisposition.WRITE_APPEND,
-            insert_retry_strategy=RetryStrategy.RETRY_ON_TRANSIENT_ERROR
-        )
+        |'write new data to bq' >>beam.ParDo(updateRow()).with_outputs(OUTPUT_TAG_FAILURE,main='outputs')
     )
-    # For WriteToBigquery operation, it has a side output with TAG
-    # FAILED_ROWS_WITH_ERRORS(To be test) or FAILED_ROWS
-    newPipeline_err=newPipeline[beam.io.gcp.bigquery.BigQueryWriteFn.FAILED_ROWS]
+
 
     completePipeline=(
         completeData
@@ -293,15 +246,16 @@ def run(argv=None,save_main_session=True):
         )
     )
     # For WriteToBigquery operation, it has a side output with TAG
-    # FAILED_ROWS_WITH_ERRORS(To be test) or FAILED_ROWS
+    # FAILED_ROWS_WITH_ERRORS(to be tested) or FAILED_ROWS
     completePipeline_err=completePipeline[beam.io.gcp.bigquery.BigQueryWriteFn.FAILED_ROWS]
 
-    inCompletePipeline,failure_updateRow =(
+    inCompletePipeline,failure_update_incompletePipeline =(
         inCompleteData
         |'update incomplete data in bq' >> beam.ParDo(updateRow()).with_outputs(OUTPUT_TAG_FAILURE,main='outputs')
     )
 
-    all_failure=(failure_extractElement,failure_enrich,failureData,failure_updateRow)\
+    all_failure=(failure_extractElement,failure_enrich,failureData,
+                 failure_update_newPipeline,failure_update_incompletePipeline)\
                 |"All Failure PCollection" >> beam.Flatten()\
                 |"parse all failure all" >> beam.ParDo(format_data_for_pb())\
                 |"send all back to pubsub" >> beam.io.WriteToPubSub(
@@ -309,8 +263,7 @@ def run(argv=None,save_main_session=True):
                     with_attributes=True
                 )
 
-    bq_failure=(newPipeline_err,completePipeline_err) \
-                |"BQ Failure PCollection" >> beam.Flatten()\
+    bq_failure= completePipeline_err \
                 |"parse bq failure" >> beam.ParDo(parseWriteResult())\
                 |"send bq error back to pubsub" >> beam.io.WriteToPubSub(
                     topic="projects/agolis-allen-first/topics/bigquery_demo",
