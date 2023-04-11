@@ -27,15 +27,13 @@ from apache_beam.io.gcp.bigquery_tools import RetryStrategy
 
 class extractElement(beam.DoFn):
    def process(self, element, *args, **kwargs):
+       # The input tuple(2) which is (b'{"user_id":1, "cpc":0.15, "region":"US"}',{'uid':'7'})
        try:
            print("extractElement Start")
            attribute = element.attributes
            data = element.data.decode('utf-8')
            if attribute.get('uid') is None:
                raise ValueError("No uid is provided in the message")
-           # A process method of a DoFn should return an Iterable[T] to produce a PCollection[T],
-           # so it should be declared as returning -> Iterable[Tuple[str, str]] other than tuple(str,str)
-           # Otherwise, only the second item will be returned.
            yield (data,attribute)
        except Exception as err:
            step_name = 'extractElement'
@@ -45,6 +43,7 @@ class extractElement(beam.DoFn):
 class enrichByBQClient(beam.DoFn):
 
     def process(self, element, *args, **kwargs):
+        # The input tuple(2) which is (b'{"user_id":1, "cpc":0.15, "region":"US"}',{'uid':'7'})
         try:
             print("Enrich from BQ Start")
             attribute = element[1]
@@ -78,6 +77,8 @@ class enrichByBQClient(beam.DoFn):
 class businessLogic(beam.DoFn):
 
     def process(self, element, *args, **kwargs):
+        # The input is tuple(3) which is
+        #  ('{"user_id":1, "cpc":0.15, "region":"US"}',{'uid':'7'},'complete')
         try:
             # print("business Logic Start")
             if element[2] == OUTPUT_TAG_NEW:
@@ -98,7 +99,9 @@ class businessLogic(beam.DoFn):
             yield beam.pvalue.TaggedOutput(OUTPUT_TAG_FAILURE, failure)
 
 class updateRow(beam.DoFn):
-   def process(self, element, *args, **kwargs):
+   def process(self, element,*args, **kwargs):
+       # The input is tuple(3) which is
+       #  ('{"user_id":1, "cpc":0.15, "region":"US"}',{'uid':'7'},'complete')
        try:
            print("updateRow Start")
            attribute = element[1]
@@ -114,6 +117,8 @@ class updateRow(beam.DoFn):
 
 class format_result_for_bq(beam.DoFn):
    def process(self, element, *args, **kwargs):
+       # The input is tuple(3) which is
+       #  ('{"user_id":1, "cpc":0.15, "region":"US"}',{'uid':'7'},'complete')
        try:
            print('format result for bq')
            yield {
@@ -195,10 +200,14 @@ def run(argv=None,save_main_session=True):
        message=(
            p|beam.io.ReadFromPubSub(topic=known_args.inputTopic,with_attributes=True))
 
+    # withoutputs(with_outputs(OUTPUT_TAG_FAILURE,main='outputs'))
+    # the output without any TAG will be assigned TAG outputs.
     mainData,failure_extractElement=(
         message |'split'>>beam.ParDo(extractElement()).with_outputs(OUTPUT_TAG_FAILURE,main='outputs')
     )
 
+    # withoutputs(with_outputs(OUTPUT_TAG_FAILURE,main='outputs'))
+    # the output without any TAG will be assigned TAG outputs.
     enrichData,failure_enrich=(
         mainData |'enrich by bigquery client' >> beam.ParDo(enrichByBQClient()).with_outputs(OUTPUT_TAG_FAILURE,main='outputs')
     )
@@ -269,6 +278,8 @@ def run(argv=None,save_main_session=True):
             insert_retry_strategy=RetryStrategy.RETRY_ON_TRANSIENT_ERROR
         )
     )
+    # For WriteToBigquery operation, it has a side output with TAG
+    # FAILED_ROWS_WITH_ERRORS(To be test) or FAILED_ROWS
     newPipeline_err=newPipeline[beam.io.gcp.bigquery.BigQueryWriteFn.FAILED_ROWS]
 
     completePipeline=(
@@ -281,6 +292,8 @@ def run(argv=None,save_main_session=True):
             insert_retry_strategy=RetryStrategy.RETRY_ON_TRANSIENT_ERROR
         )
     )
+    # For WriteToBigquery operation, it has a side output with TAG
+    # FAILED_ROWS_WITH_ERRORS(To be test) or FAILED_ROWS
     completePipeline_err=completePipeline[beam.io.gcp.bigquery.BigQueryWriteFn.FAILED_ROWS]
 
     inCompletePipeline,failure_updateRow =(
@@ -315,5 +328,7 @@ if __name__ == '__main__':
     OUTPUT_TAG_INCOMPLETE = 'inComplete'
     OUTPUT_TAG_COMPLETE = 'complete'
     OUTPUT_TAG_FAILURE = 'failure'
+
+    # client = bigquery.Client()
 
     run()
