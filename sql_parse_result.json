@@ -1,0 +1,134 @@
+{
+  "joinLargestTableFirst": {
+    "tables": [
+      {
+        "numRows": 4,
+        "table": {
+          "datasetId": "sys_query_analyzer",
+          "projectId": "toko-data-archival-poc",
+          "tableId": "principal"
+        }
+      },
+      {
+        "numRows": 2187,
+        "table": {
+          "datasetId": "sys_query_analyzer",
+          "projectId": "toko-data-archival-poc",
+          "tableId": "measures"
+        }
+      }
+    ]
+  },
+  "predicates": {
+    "tables": [
+      {
+        "table": {
+          "datasetId": "sys_query_analyzer",
+          "projectId": "toko-data-archival-poc",
+          "tableId": "principal"
+        },
+        "rangePartitionField": null,
+        "timePartitionField": null,
+        "clusteringFields": null
+      },
+      {
+        "table": {
+          "datasetId": "sys_query_analyzer",
+          "projectId": "toko-data-archival-poc",
+          "tableId": "measures"
+        },
+        "rangePartitionField": null,
+        "timePartitionField": {
+          "type": "HOUR",
+          "expirationMs": null,
+          "field": "timestamp",
+          "requirePartitionFilter": null
+        },
+        "clusteringFields": {
+          "fields": [
+            "principalEmail",
+            "projectId"
+          ]
+        }
+      }
+    ],
+    "columns": [
+      {
+        "columnName": "projectId",
+        "table": {
+          "datasetId": "sys_query_analyzer",
+          "projectId": "toko-data-archival-poc",
+          "tableId": "measures"
+        }
+      },
+      {
+        "columnName": "principalEmail",
+        "table": {
+          "datasetId": "sys_query_analyzer",
+          "projectId": "toko-data-archival-poc",
+          "tableId": "measures"
+        }
+      },
+      {
+        "columnName": "timestamp",
+        "table": {
+          "datasetId": "sys_query_analyzer",
+          "projectId": "toko-data-archival-poc",
+          "tableId": "measures"
+        }
+      },
+      {
+        "columnName": "email",
+        "table": {
+          "datasetId": "sys_query_analyzer",
+          "projectId": "toko-data-archival-poc",
+          "tableId": "principal"
+        }
+      }
+    ]
+  },
+  "projectId": "toko-data-archival-poc",
+  "projectedColumns": {
+    "tables": [
+      {
+        "projectedColumns": [
+          "jobStatistics"
+        ],
+        "table": {
+          "datasetId": "sys_query_analyzer",
+          "projectId": "toko-data-archival-poc",
+          "tableId": "measures"
+        },
+        "columns": [
+          "timestamp",
+          "projectId",
+          "principalEmail",
+          "callerSuppliedUserAgent",
+          "jobStatistics"
+        ]
+      },
+      {
+        "projectedColumns": [
+          "email",
+          "role",
+          "department",
+          "manager_email",
+          "vp_email"
+        ],
+        "table": {
+          "datasetId": "sys_query_analyzer",
+          "projectId": "toko-data-archival-poc",
+          "tableId": "principal"
+        },
+        "columns": [
+          "email",
+          "role",
+          "department",
+          "manager_email",
+          "vp_email"
+        ]
+      }
+    ]
+  },
+  "query": "SELECT m.jobStatistics, p.* FROM `toko-data-archival-poc.sys_query_analyzer.principal` p JOIN `toko-data-archival-poc.sys_query_analyzer.measures` m ON  m.principalEmail = p.email WHERE m.projectId = 'toko-data-archival-poc' AND m.principalEmail = 'yuanchuankee@google.com' AND m.timestamp > timestamp('1970-01-01 00:00:00') and p.email is not Null"
+}
