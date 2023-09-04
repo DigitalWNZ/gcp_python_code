@@ -6,7 +6,7 @@ import google.cloud.bigquery.datapolicies_v1.types
 import os
 
 if __name__ == '__main__':
-    path_to_credential = '/Users/wangez/Downloads/agolis-allen-first-2a651eae4ca4.json'
+    path_to_credential = '/Users/wangez/Downloads/GCP_Credentials/agolis-allen-first-13f3be86c3d1.json'
     os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = path_to_credential
 
 
@@ -26,8 +26,15 @@ if __name__ == '__main__':
     taxonomy = client.create_taxonomy(parent=parent, taxonomy=taxonomy,)
     print(f"Created taxonomy {taxonomy.name}")
 
+
+
     # Create policy tag
     parent_value=taxonomy.name
+
+    dc_client = datacatalog_v1.PolicyTagManagerClient()
+    dc_client.list_policy_tags(parent=parent_value)
+
+
     policy_tag=datacatalog_v1.PolicyTag()
     policy_tag.display_name="example policy tag"
     policy_tag = client.create_policy_tag(parent=parent_value,policy_tag=policy_tag)
