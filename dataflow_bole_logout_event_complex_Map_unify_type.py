@@ -52,7 +52,7 @@ def run(argv=None,save_main_session=True):
             data = element.data.decode('utf-8')
             if json.loads(data).get('event_name') == 'logout':
                 user_id = json.loads(data).get('user_id')
-                raise Exception("extract fail")
+                # raise Exception("extract fail")
                 """https://stackoverflow.com/questions/53912918/difference-between-beam-pardo-and-beam-map-in-the-output-type
                 Best practice: output list in ParDo(),single object in Map
                 """
