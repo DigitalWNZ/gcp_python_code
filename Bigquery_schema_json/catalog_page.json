@@ -1,0 +1,11 @@
+[
+  {"name":"cp_catalog_page_sk","type":"INTEGER"},
+  {"name":"cp_catalog_page_id","type":"STRING"},
+  {"name":"cp_start_date_sk","type":"INTEGER"},
+  {"name":"cp_end_date_sk","type":"INTEGER"},
+  {"name":"cp_department","type":"STRING"},
+  {"name":"cp_catalog_number","type":"INTEGER"},
+  {"name":"cp_catalog_page_number","type":"INTEGER"},
+  {"name":"cp_description","type":"STRING"},
+  {"name":"cp_type","type":"STRING"}
+]

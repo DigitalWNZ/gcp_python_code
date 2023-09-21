@@ -20,7 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="92a03f30-5245-4714-b1e0-8b6f4c46ab35" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/dataflow_bole_logout_event_complex_Map_no_type_hint.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tpcds_query_execution.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -53,7 +53,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.dataflow_bole_logout_event_complex_Map_unify_type">
+  <component name="RunManager" selected="Python.tpcds_query_execution">
     <configuration name="dataflow_bole_logout_event_complex_Map" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="gcp_python_code" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -117,27 +117,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="dataflow_bole_logout_event_simple_ParDo" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="gcp_python_code" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/dataflow_bole_logout_event_simple_ParDo.py" />
-      <option name="PARAMETERS" value="--outputTable agolis-allen-first:experiment.dataflow_insert --stagingLocation gs://agolis-allen-first-dataflow --tempLocation gs://agolis-allen-first-dataflow --runner direct --inputTopic projects/agolis-allen-first/topics/demo" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="dataflow_word_count" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="gcp_python_code" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -180,21 +159,42 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="tpcds_query_execution" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="gcp_python_code" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tpcds_query_execution.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Python.dataflow_word_count" />
-      <item itemvalue="Python.dataflow_bole_logout_event_simple_ParDo" />
       <item itemvalue="Python.dataflow_bole_logout_event_simple_Map" />
       <item itemvalue="Python.dataflow_bole_logout_event_complex_Map" />
       <item itemvalue="Python.formular_generator" />
       <item itemvalue="Python.dataflow_bole_logout_event_complex_Map_unify_type" />
+      <item itemvalue="Python.tpcds_query_execution" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.tpcds_query_execution" />
         <item itemvalue="Python.dataflow_bole_logout_event_complex_Map_unify_type" />
         <item itemvalue="Python.dataflow_bole_logout_event_complex_Map" />
         <item itemvalue="Python.formular_generator" />
         <item itemvalue="Python.dataflow_bole_logout_event_simple_Map" />
-        <item itemvalue="Python.dataflow_bole_logout_event_simple_ParDo" />
       </list>
     </recent_temporary>
   </component>
@@ -226,60 +226,60 @@
       <screen x="0" y="25" width="1792" height="1010" />
     </state>
     <state x="463" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.25.1792.1010/-410.-1415.2560.1415@0.25.1792.1010" timestamp="1694671741250" />
-    <state width="1771" height="260" key="GridCell.Tab.0.bottom" timestamp="1694672856858">
+    <state width="1771" height="271" key="GridCell.Tab.0.bottom" timestamp="1695268607951">
       <screen x="0" y="25" width="1792" height="1010" />
     </state>
     <state width="1899" height="285" key="GridCell.Tab.0.bottom/-77.-1055.1920.1055/0.25.1792.1010@-77.-1055.1920.1055" timestamp="1693838802235" />
     <state width="1899" height="285" key="GridCell.Tab.0.bottom/0.25.1792.1010/-410.-1415.2560.1415@-410.-1415.2560.1415" timestamp="1693879659606" />
-    <state width="1771" height="260" key="GridCell.Tab.0.bottom/0.25.1792.1010/-410.-1415.2560.1415@0.25.1792.1010" timestamp="1694672856858" />
-    <state width="1771" height="274" key="GridCell.Tab.0.bottom/0.25.1792.1010@0.25.1792.1010" timestamp="1693476059658" />
+    <state width="1771" height="271" key="GridCell.Tab.0.bottom/0.25.1792.1010/-410.-1415.2560.1415@0.25.1792.1010" timestamp="1695204896387" />
+    <state width="1771" height="271" key="GridCell.Tab.0.bottom/0.25.1792.1010@0.25.1792.1010" timestamp="1695268607951" />
     <state width="1771" height="271" key="GridCell.Tab.0.bottom/0.25.1792.1095/-410.-1415.2560.1330@0.25.1792.1095" timestamp="1693829208243" />
-    <state width="1771" height="260" key="GridCell.Tab.0.center" timestamp="1694672856857">
+    <state width="1771" height="271" key="GridCell.Tab.0.center" timestamp="1695268607950">
       <screen x="0" y="25" width="1792" height="1010" />
     </state>
     <state width="1899" height="285" key="GridCell.Tab.0.center/-77.-1055.1920.1055/0.25.1792.1010@-77.-1055.1920.1055" timestamp="1693838802234" />
     <state width="1899" height="285" key="GridCell.Tab.0.center/0.25.1792.1010/-410.-1415.2560.1415@-410.-1415.2560.1415" timestamp="1693879659605" />
-    <state width="1771" height="260" key="GridCell.Tab.0.center/0.25.1792.1010/-410.-1415.2560.1415@0.25.1792.1010" timestamp="1694672856857" />
-    <state width="1771" height="274" key="GridCell.Tab.0.center/0.25.1792.1010@0.25.1792.1010" timestamp="1693476059658" />
+    <state width="1771" height="271" key="GridCell.Tab.0.center/0.25.1792.1010/-410.-1415.2560.1415@0.25.1792.1010" timestamp="1695204896386" />
+    <state width="1771" height="271" key="GridCell.Tab.0.center/0.25.1792.1010@0.25.1792.1010" timestamp="1695268607950" />
     <state width="1771" height="271" key="GridCell.Tab.0.center/0.25.1792.1095/-410.-1415.2560.1330@0.25.1792.1095" timestamp="1693829208242" />
-    <state width="1771" height="260" key="GridCell.Tab.0.left" timestamp="1694672856857">
+    <state width="1771" height="271" key="GridCell.Tab.0.left" timestamp="1695268607949">
       <screen x="0" y="25" width="1792" height="1010" />
     </state>
     <state width="1899" height="285" key="GridCell.Tab.0.left/-77.-1055.1920.1055/0.25.1792.1010@-77.-1055.1920.1055" timestamp="1693838802234" />
     <state width="1899" height="285" key="GridCell.Tab.0.left/0.25.1792.1010/-410.-1415.2560.1415@-410.-1415.2560.1415" timestamp="1693879659605" />
-    <state width="1771" height="260" key="GridCell.Tab.0.left/0.25.1792.1010/-410.-1415.2560.1415@0.25.1792.1010" timestamp="1694672856857" />
-    <state width="1771" height="274" key="GridCell.Tab.0.left/0.25.1792.1010@0.25.1792.1010" timestamp="1693476059658" />
+    <state width="1771" height="271" key="GridCell.Tab.0.left/0.25.1792.1010/-410.-1415.2560.1415@0.25.1792.1010" timestamp="1695204896386" />
+    <state width="1771" height="271" key="GridCell.Tab.0.left/0.25.1792.1010@0.25.1792.1010" timestamp="1695268607949" />
     <state width="1771" height="271" key="GridCell.Tab.0.left/0.25.1792.1095/-410.-1415.2560.1330@0.25.1792.1095" timestamp="1693829208242" />
-    <state width="1771" height="260" key="GridCell.Tab.0.right" timestamp="1694672856858">
+    <state width="1771" height="271" key="GridCell.Tab.0.right" timestamp="1695268607950">
       <screen x="0" y="25" width="1792" height="1010" />
     </state>
     <state width="1899" height="285" key="GridCell.Tab.0.right/-77.-1055.1920.1055/0.25.1792.1010@-77.-1055.1920.1055" timestamp="1693838802235" />
     <state width="1899" height="285" key="GridCell.Tab.0.right/0.25.1792.1010/-410.-1415.2560.1415@-410.-1415.2560.1415" timestamp="1693879659606" />
-    <state width="1771" height="260" key="GridCell.Tab.0.right/0.25.1792.1010/-410.-1415.2560.1415@0.25.1792.1010" timestamp="1694672856858" />
-    <state width="1771" height="274" key="GridCell.Tab.0.right/0.25.1792.1010@0.25.1792.1010" timestamp="1693476059658" />
+    <state width="1771" height="271" key="GridCell.Tab.0.right/0.25.1792.1010/-410.-1415.2560.1415@0.25.1792.1010" timestamp="1695204896387" />
+    <state width="1771" height="271" key="GridCell.Tab.0.right/0.25.1792.1010@0.25.1792.1010" timestamp="1695268607950" />
     <state width="1771" height="271" key="GridCell.Tab.0.right/0.25.1792.1095/-410.-1415.2560.1330@0.25.1792.1095" timestamp="1693829208243" />
-    <state width="1771" height="260" key="GridCell.Tab.1.bottom" timestamp="1694672774469">
+    <state width="1771" height="260" key="GridCell.Tab.1.bottom" timestamp="1694675411414">
       <screen x="0" y="25" width="1792" height="1010" />
     </state>
-    <state width="1771" height="260" key="GridCell.Tab.1.bottom/0.25.1792.1010/-410.-1415.2560.1415@0.25.1792.1010" timestamp="1694672774469" />
+    <state width="1771" height="260" key="GridCell.Tab.1.bottom/0.25.1792.1010/-410.-1415.2560.1415@0.25.1792.1010" timestamp="1694675411414" />
     <state width="1771" height="274" key="GridCell.Tab.1.bottom/0.25.1792.1010@0.25.1792.1010" timestamp="1693476059577" />
     <state width="1771" height="274" key="GridCell.Tab.1.bottom/0.25.1792.1095/-410.-1415.2560.1330@0.25.1792.1095" timestamp="1693829208236" />
-    <state width="1771" height="260" key="GridCell.Tab.1.center" timestamp="1694672774469">
+    <state width="1771" height="260" key="GridCell.Tab.1.center" timestamp="1694675411413">
       <screen x="0" y="25" width="1792" height="1010" />
     </state>
-    <state width="1771" height="260" key="GridCell.Tab.1.center/0.25.1792.1010/-410.-1415.2560.1415@0.25.1792.1010" timestamp="1694672774469" />
+    <state width="1771" height="260" key="GridCell.Tab.1.center/0.25.1792.1010/-410.-1415.2560.1415@0.25.1792.1010" timestamp="1694675411413" />
     <state width="1771" height="274" key="GridCell.Tab.1.center/0.25.1792.1010@0.25.1792.1010" timestamp="1693476059576" />
     <state width="1771" height="274" key="GridCell.Tab.1.center/0.25.1792.1095/-410.-1415.2560.1330@0.25.1792.1095" timestamp="1693829208236" />
-    <state width="1771" height="260" key="GridCell.Tab.1.left" timestamp="1694672774468">
+    <state width="1771" height="260" key="GridCell.Tab.1.left" timestamp="1694675411413">
       <screen x="0" y="25" width="1792" height="1010" />
     </state>
-    <state width="1771" height="260" key="GridCell.Tab.1.left/0.25.1792.1010/-410.-1415.2560.1415@0.25.1792.1010" timestamp="1694672774468" />
+    <state width="1771" height="260" key="GridCell.Tab.1.left/0.25.1792.1010/-410.-1415.2560.1415@0.25.1792.1010" timestamp="1694675411413" />
     <state width="1771" height="274" key="GridCell.Tab.1.left/0.25.1792.1010@0.25.1792.1010" timestamp="1693476059576" />
     <state width="1771" height="274" key="GridCell.Tab.1.left/0.25.1792.1095/-410.-1415.2560.1330@0.25.1792.1095" timestamp="1693829208236" />
-    <state width="1771" height="260" key="GridCell.Tab.1.right" timestamp="1694672774469">
+    <state width="1771" height="260" key="GridCell.Tab.1.right" timestamp="1694675411413">
       <screen x="0" y="25" width="1792" height="1010" />
     </state>
-    <state width="1771" height="260" key="GridCell.Tab.1.right/0.25.1792.1010/-410.-1415.2560.1415@0.25.1792.1010" timestamp="1694672774469" />
+    <state width="1771" height="260" key="GridCell.Tab.1.right/0.25.1792.1010/-410.-1415.2560.1415@0.25.1792.1010" timestamp="1694675411413" />
     <state width="1771" height="274" key="GridCell.Tab.1.right/0.25.1792.1010@0.25.1792.1010" timestamp="1693476059576" />
     <state width="1771" height="274" key="GridCell.Tab.1.right/0.25.1792.1095/-410.-1415.2560.1330@0.25.1792.1095" timestamp="1693829208236" />
     <state x="484" y="277" key="IDE.errors.dialog" timestamp="1693826466469">
