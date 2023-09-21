@@ -14,7 +14,6 @@ def update_billing_model ():
     client=bigquery.Client()
     dataset_id = 'agolis-allen-first.ELM'
     dataset = client.get_dataset(dataset_id)  # Make an API request.
-    dataset.
 
     # Set the default partition expiration (applies to new tables, only) in
     # milliseconds. This example sets the default expiration to 90 days.
