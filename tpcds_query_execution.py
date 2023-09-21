@@ -9,20 +9,38 @@ if __name__ == '__main__':
 
     default_project='agolis-allen-first'
     default_dataset='tpcds_data_320'
+    region='us-central1'
 
     result_project='agolis-allen-first'
     result_dataset='tpcds_data_320'
     result_table='tpcds_result'
+    cross_result_table='tpcds_cross_result'
     full_result_table='{}.{}.{}'.format(result_project,result_dataset,result_table)
+    full_cross_result_table = '{}.{}.{}'.format(result_project, result_dataset, cross_result_table)
+
 
     run_id='20230920'
     query_category='Bigquery Native'
     query_path='./generated_query_320/{}.sql'
     query_run_times=1
-    dry_run_flag=True
+    dry_run_flag=False
     client=bigquery.Client(default_project)
+
+    create_table_sql = 'create table if not exists `{}` (' \
+                       'run_id string,' \
+                       'category string,' \
+                       'sn int64,' \
+                       'run_sn int64,' \
+                       'job_id string,' \
+                       'client_start_time timestamp,' \
+                       'client_end_time timestamp,' \
+                       'client_duration int64)'.format(full_result_table)
+    create_table_job=client.query(create_table_sql)
+    #wait till the job done
+    create_table_result=create_table_job.result()
+
     job_config=bigquery.QueryJobConfig(use_query_cache=False,dry_run=dry_run_flag,default_dataset='{}.{}'.format(default_project,default_dataset))
-    for i in range(1,100):
+    for i in range(1,3):
         print('Run job {}'.format(str(i)))
         f=open(query_path.format(str(i)))
         sql=f.read()
@@ -43,15 +61,26 @@ if __name__ == '__main__':
             rec['sn']=i
             rec['run_sn']=x
             rec['job_id']=job_id
-            rec['start_time']=start_time
-            rec['end_time']=end_time
-            rec['duration']=duration
+            rec['client_start_time']=start_time
+            rec['client_end_time']=end_time
+            rec['client_duration']=duration
             resp_query_run_rec.append(rec)
 
         if not dry_run_flag:
             client.insert_rows_json(full_result_table,resp_query_run_rec)
 
-
+    job_stat_sql = 'create or replace table `{}` as select \n' \
+                   'a.run_id,a.category,a.sn,a.run_sn,a.job_id,a.client_start_time,a.client_end_time,a.client_duration,\n' \
+                   'b.creation_time,b.start_time,b.end_time,TIMESTAMP_DIFF(b.end_time, b.start_time, SECOND) AS job_duraiton,\n' \
+                   'b.total_bytes_processed, b.total_bytes_billed,b.total_slot_ms,\n' \
+                   'b.total_slot_ms / (TIMESTAMP_DIFF(b.end_time, b.start_time, MILLISECOND)) AS avg_slots \n' \
+                   'from `{}` a \n' \
+                   'inner join {}.`region-{}`.INFORMATION_SCHEMA.JOBS_BY_PROJECT b \n' \
+                   'on a.job_id = b.job_id \n' \
+                   'where a.run_id="{}"'.format(full_cross_result_table,full_result_table,default_project,region,run_id)
+    stat_job=client.query(job_stat_sql)
+    #wait till the job done
+    stat_result=stat_job.result()
 
     print("job completed")
 
