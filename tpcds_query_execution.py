@@ -15,11 +15,13 @@ if __name__ == '__main__':
     result_table='tpcds_result'
     full_result_table='{}.{}.{}'.format(result_project,result_dataset,result_table)
 
+    run_id='20230920'
     query_category='Bigquery Native'
     query_path='./generated_query_320/{}.sql'
     query_run_times=1
+    dry_run_flag=True
     client=bigquery.Client(default_project)
-    job_config=bigquery.QueryJobConfig(use_query_cache=False,dry_run=True,default_dataset='{}.{}'.format(default_project,default_dataset))
+    job_config=bigquery.QueryJobConfig(use_query_cache=False,dry_run=dry_run_flag,default_dataset='{}.{}'.format(default_project,default_dataset))
     for i in range(1,100):
         print('Run job {}'.format(str(i)))
         f=open(query_path.format(str(i)))
@@ -36,6 +38,7 @@ if __name__ == '__main__':
             duration = int((end_time - start_time) * 1000)
 
             rec={}
+            rec['run_id']=run_id
             rec['category']=query_category
             rec['sn']=i
             rec['run_sn']=x
@@ -45,7 +48,10 @@ if __name__ == '__main__':
             rec['duration']=duration
             resp_query_run_rec.append(rec)
 
-        # client.insert_rows_json(full_result_table,resp_query_run_rec)
+        if not dry_run_flag:
+            client.insert_rows_json(full_result_table,resp_query_run_rec)
+
+
 
     print("job completed")
 
