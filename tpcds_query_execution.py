@@ -9,20 +9,25 @@ if __name__ == '__main__':
 
     default_project='agolis-allen-first'
     default_dataset='tpcds_data_320'
+    default_dataset='tpcds_data_320_iceberg_no_par'
+    default_dataset='tpcds_data_320_iceberg_with_par'
     region='us-central1'
 
     result_project='agolis-allen-first'
     result_dataset='tpcds_data_320'
+    result_dataset='tpcds_data_320_iceberg_no_par'
+    result_dataset='tpcds_data_320_iceberg_with_par'
     result_table='tpcds_result'
     cross_result_table='tpcds_cross_result'
     full_result_table='{}.{}.{}'.format(result_project,result_dataset,result_table)
     full_cross_result_table = '{}.{}.{}'.format(result_project, result_dataset, cross_result_table)
 
 
-    run_id='20230920'
+    run_id='20230922_2'
     query_category='Bigquery Native'
+    query_category='Bigquery icerberg no partition Native'
     query_path='./generated_query_320/{}.sql'
-    query_run_times=1
+    query_run_times=5
     dry_run_flag=False
     client=bigquery.Client(default_project)
 
@@ -40,12 +45,13 @@ if __name__ == '__main__':
     create_table_result=create_table_job.result()
 
     job_config=bigquery.QueryJobConfig(use_query_cache=False,dry_run=dry_run_flag,default_dataset='{}.{}'.format(default_project,default_dataset))
-    for i in range(1,3):
+    resp_query_run_rec = []
+    for i in range(1,100):
         print('Run job {}'.format(str(i)))
         f=open(query_path.format(str(i)))
         sql=f.read()
 
-        resp_query_run_rec=[]
+        # resp_query_run_rec=[]
         for x in range(0,query_run_times):
             print('Run job {} for the {} time'.format(str(i),str(x+1)))
             job=client.query(sql,job_config=job_config)
@@ -66,8 +72,8 @@ if __name__ == '__main__':
             rec['client_duration']=duration
             resp_query_run_rec.append(rec)
 
-        if not dry_run_flag:
-            client.insert_rows_json(full_result_table,resp_query_run_rec)
+    if not dry_run_flag:
+        client.insert_rows_json(full_result_table,resp_query_run_rec)
 
     job_stat_sql = 'create or replace table `{}` as select \n' \
                    'a.run_id,a.category,a.sn,a.run_sn,a.job_id,a.client_start_time,a.client_end_time,a.client_duration,\n' \
