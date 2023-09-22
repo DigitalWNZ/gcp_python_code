@@ -23,7 +23,9 @@ spark = SparkSession \
 
 spark.conf.set("temporaryGcsBucket", 'gs://agolis-allen-first-iceberg-tpcds')
 
+spark.sql("DROP NAMESPACE IF EXISTS iceberg_tpcds_with_par;")
 spark.sql("CREATE NAMESPACE IF NOT EXISTS iceberg_tpcds_with_par;")
+spark.sql("DROP DATABASE IF EXISTS iceberg_tpcds_with_par.tpcds_with_par;")
 spark.sql("CREATE DATABASE IF NOT EXISTS iceberg_tpcds_with_par.tpcds_with_par;")
 ### item
 spark.sql("DROP TABLE IF EXISTS iceberg_tpcds_with_par.tpcds_with_par.item;")
