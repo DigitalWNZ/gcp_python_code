@@ -9,23 +9,25 @@ if __name__ == '__main__':
 
     default_project='agolis-allen-first'
     default_dataset='tpcds_data_320'
-    default_dataset='tpcds_data_320_iceberg_no_par'
-    default_dataset='tpcds_data_320_iceberg_with_par'
+    # default_dataset='tpcds_data_320_iceberg_no_par'
+    # default_dataset='tpcds_data_320_iceberg_with_par'
     region='us-central1'
 
     result_project='agolis-allen-first'
     result_dataset='tpcds_data_320'
-    result_dataset='tpcds_data_320_iceberg_no_par'
-    result_dataset='tpcds_data_320_iceberg_with_par'
-    result_table='tpcds_result'
-    cross_result_table='tpcds_cross_result'
+    # result_dataset='tpcds_data_320_iceberg_no_par'
+    # result_dataset='tpcds_data_320_iceberg_with_par'
+    result_table='tpcds_result_cmeta'
+    cross_result_table='tpcds_cross_result_cmeta'
     full_result_table='{}.{}.{}'.format(result_project,result_dataset,result_table)
     full_cross_result_table = '{}.{}.{}'.format(result_project, result_dataset, cross_result_table)
 
 
     run_id='20230922_2'
     query_category='Bigquery Native'
-    query_category='Bigquery icerberg no partition Native'
+    query_category='Bigquery icerberg no partition'
+    query_category = 'Bigquery icerberg with partition'
+    query_category = 'Bigquery Native CMeta'
     query_path='./generated_query_320/{}.sql'
     query_run_times=5
     dry_run_flag=False
@@ -77,7 +79,7 @@ if __name__ == '__main__':
 
     job_stat_sql = 'create or replace table `{}` as select \n' \
                    'a.run_id,a.category,a.sn,a.run_sn,a.job_id,a.client_start_time,a.client_end_time,a.client_duration,\n' \
-                   'b.creation_time,b.start_time,b.end_time,TIMESTAMP_DIFF(b.end_time, b.start_time, SECOND) AS job_duraiton,\n' \
+                   'b.creation_time,b.start_time,b.end_time,TIMESTAMP_DIFF(b.end_time, b.start_time, MILLISECOND) AS job_duration,\n' \
                    'b.total_bytes_processed, b.total_bytes_billed,b.total_slot_ms,\n' \
                    'b.total_slot_ms / (TIMESTAMP_DIFF(b.end_time, b.start_time, MILLISECOND)) AS avg_slots \n' \
                    'from `{}` a \n' \
