@@ -76,19 +76,18 @@ if __name__ == '__main__':
 
     if not dry_run_flag:
         client.insert_rows_json(full_result_table,resp_query_run_rec)
-
-    job_stat_sql = 'create or replace table `{}` as select \n' \
-                   'a.run_id,a.category,a.sn,a.run_sn,a.job_id,a.client_start_time,a.client_end_time,a.client_duration,\n' \
-                   'b.creation_time,b.start_time,b.end_time,TIMESTAMP_DIFF(b.end_time, b.start_time, MILLISECOND) AS job_duration,\n' \
-                   'b.total_bytes_processed, b.total_bytes_billed,b.total_slot_ms,\n' \
-                   'b.total_slot_ms / (TIMESTAMP_DIFF(b.end_time, b.start_time, MILLISECOND)) AS avg_slots \n' \
-                   'from `{}` a \n' \
-                   'inner join {}.`region-{}`.INFORMATION_SCHEMA.JOBS_BY_PROJECT b \n' \
-                   'on a.job_id = b.job_id \n' \
-                   'where a.run_id="{}"'.format(full_cross_result_table,full_result_table,default_project,region,run_id)
-    stat_job=client.query(job_stat_sql)
-    #wait till the job done
-    stat_result=stat_job.result()
+        job_stat_sql = 'create or replace table `{}` as select \n' \
+                       'a.run_id,a.category,a.sn,a.run_sn,a.job_id,a.client_start_time,a.client_end_time,a.client_duration,\n' \
+                       'b.creation_time,b.start_time,b.end_time,TIMESTAMP_DIFF(b.end_time, b.start_time, MILLISECOND) AS job_duration,\n' \
+                       'b.total_bytes_processed, b.total_bytes_billed,b.total_slot_ms,\n' \
+                       'b.total_slot_ms / (TIMESTAMP_DIFF(b.end_time, b.start_time, MILLISECOND)) AS avg_slots \n' \
+                       'from `{}` a \n' \
+                       'inner join {}.`region-{}`.INFORMATION_SCHEMA.JOBS_BY_PROJECT b \n' \
+                       'on a.job_id = b.job_id \n' \
+                       'where a.run_id="{}"'.format(full_cross_result_table,full_result_table,default_project,region,run_id)
+        stat_job=client.query(job_stat_sql)
+        #wait till the job done
+        stat_result=stat_job.result()
 
     print("job completed")
 
