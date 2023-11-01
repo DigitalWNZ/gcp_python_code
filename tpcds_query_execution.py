@@ -8,29 +8,47 @@ if __name__ == '__main__':
     os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = path_to_credential
 
     default_project='agolis-allen-first'
-    default_dataset='tpcds_data_320'
+    # default_dataset='tpcds_data_320'
     # default_dataset='tpcds_data_320_iceberg_no_par'
     # default_dataset='tpcds_data_320_iceberg_with_par'
+    # default_dataset='tpcds_data_320_iceberg_no_par_zstd'
+    # default_dataset='tpcds_data_320_iceberg_with_par_zstd'
+    # default_dataset = 'tpcds_data_320_1T'
+    default_dataset = 'tpcds_data_320_1T_iceberg_no_par'
+    # default_dataset = 'tpcds_data_320_1T_iceberg_with_par'
     region='us-central1'
 
     result_project='agolis-allen-first'
-    result_dataset='tpcds_data_320'
+    # result_dataset='tpcds_data_320'
     # result_dataset='tpcds_data_320_iceberg_no_par'
     # result_dataset='tpcds_data_320_iceberg_with_par'
-    result_table='tpcds_result_cmeta'
-    cross_result_table='tpcds_cross_result_cmeta'
+    # result_dataset='tpcds_data_320_iceberg_no_par_zstd'
+    # result_dataset='tpcds_data_320_iceberg_with_par_zstd'
+    # result_dataset = 'tpcds_data_320_1T'
+    result_dataset = 'tpcds_data_320_1T_iceberg_no_par'
+    # result_dataset = 'tpcds_data_320_1T_iceberg_with_par'
+    result_table='tpcds_result'
+    cross_result_table='tpcds_cross_result'
+    # result_table='tpcds_result_cmeta'
+    # cross_result_table='tpcds_cross_result_cmeta'
     full_result_table='{}.{}.{}'.format(result_project,result_dataset,result_table)
     full_cross_result_table = '{}.{}.{}'.format(result_project, result_dataset, cross_result_table)
 
 
-    run_id='20230922_2'
-    query_category='Bigquery Native'
-    query_category='Bigquery icerberg no partition'
-    query_category = 'Bigquery icerberg with partition'
-    query_category = 'Bigquery Native CMeta'
+    run_id='20231101_1'
+    # query_category='Bigquery Native '
+    # query_category='Bigquery icerberg no partition'
+    # query_category = 'Bigquery icerberg with partition'
+    # query_category = 'Bigquery Native CMeta'
+    # query_category = 'Bigquery zstd iceberg no partition'
+    # query_category = 'Bigquery zstd iceberg with partition'
+    query_category = 'Bigquery Native 1T'
+    query_category = 'Bigquery Native Cmeta 1T'
+    query_category = 'Bigquery iceberg no partition 1T'
+    query_category = 'Bigquery zstd iceberg with partition 1T'
     query_path='./generated_query_320/{}.sql'
-    query_run_times=5
-    dry_run_flag=False
+    query_run_times=1
+    dry_run_flag=True
     client=bigquery.Client(default_project)
 
     create_table_sql = 'create table if not exists `{}` (' \
