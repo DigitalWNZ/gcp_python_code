@@ -1,0 +1,14 @@
+
+syntax = "proto2";
+
+message CustomerRecord {
+
+  optional string user_name = 1;
+  repeated string target = 2;
+  repeated int32 authLevel = 3;
+  repeated string geolocation = 4;
+  repeated string userAgent = 5;
+  repeated string appflag = 6;
+  repeated string ip = 7;
+  optional string hitDictLevel = 8;
+}

@@ -13,9 +13,15 @@ if __name__ == '__main__':
     # default_dataset='tpcds_data_320_iceberg_with_par'
     # default_dataset='tpcds_data_320_iceberg_no_par_zstd'
     # default_dataset='tpcds_data_320_iceberg_with_par_zstd'
+
     # default_dataset = 'tpcds_data_320_1T'
-    default_dataset = 'tpcds_data_320_1T_iceberg_no_par'
+    # default_dataset = 'tpcds_data_320_1T_iceberg_no_par'
     # default_dataset = 'tpcds_data_320_1T_iceberg_with_par'
+
+    # default_dataset = 'tpcds_data_320_1T_v1'
+    # default_dataset = 'tpcds_data_320_1T_iceberg_no_par_v1'
+    # default_dataset = 'tpcds_data_320_1T_iceberg_with_par_v1'
+    default_dataset = 'tpcds_data_320_1T_iceberg_BLMT_v1'
     region='us-central1'
 
     result_project='agolis-allen-first'
@@ -24,28 +30,45 @@ if __name__ == '__main__':
     # result_dataset='tpcds_data_320_iceberg_with_par'
     # result_dataset='tpcds_data_320_iceberg_no_par_zstd'
     # result_dataset='tpcds_data_320_iceberg_with_par_zstd'
+
     # result_dataset = 'tpcds_data_320_1T'
-    result_dataset = 'tpcds_data_320_1T_iceberg_no_par'
+    # result_dataset = 'tpcds_data_320_1T_iceberg_no_par'
     # result_dataset = 'tpcds_data_320_1T_iceberg_with_par'
+
+    # result_dataset = 'tpcds_data_320_1T_v1'
+    # result_dataset = 'tpcds_data_320_1T_iceberg_no_par_v1'
+    # result_dataset = 'tpcds_data_320_1T_iceberg_with_par_v1'
+    result_dataset='tpcds_data_320_1T_iceberg_BLMT_v1'
+
     result_table='tpcds_result'
     cross_result_table='tpcds_cross_result'
     # result_table='tpcds_result_cmeta'
     # cross_result_table='tpcds_cross_result_cmeta'
+
     full_result_table='{}.{}.{}'.format(result_project,result_dataset,result_table)
     full_cross_result_table = '{}.{}.{}'.format(result_project, result_dataset, cross_result_table)
 
 
-    run_id='20231101_1'
+    run_id='20231211_1'
     # query_category='Bigquery Native '
     # query_category='Bigquery icerberg no partition'
     # query_category = 'Bigquery icerberg with partition'
     # query_category = 'Bigquery Native CMeta'
+
     # query_category = 'Bigquery zstd iceberg no partition'
     # query_category = 'Bigquery zstd iceberg with partition'
-    query_category = 'Bigquery Native 1T'
-    query_category = 'Bigquery Native Cmeta 1T'
-    query_category = 'Bigquery iceberg no partition 1T'
-    query_category = 'Bigquery zstd iceberg with partition 1T'
+
+    # query_category = 'Bigquery Native 1T'
+    # query_category = 'Bigquery Native Cmeta 1T'
+    # query_category = 'Bigquery iceberg no partition 1T'
+    # query_category = 'Bigquery iceberg with partition 1T'
+
+    # query_category = 'Bigquery Native 1T v1'
+    # query_category = 'Bigquery Native Cmeta 1T v1'
+    # query_category = 'Bigquery iceberg no partition 1T v1'
+    # query_category = 'Bigquery iceberg with partition 1T v1'
+    query_category = 'Bigquery iceberg BLMT 1T v1'
+
     query_path='./generated_query_320/{}.sql'
     query_run_times=1
     dry_run_flag=True
@@ -66,6 +89,8 @@ if __name__ == '__main__':
 
     job_config=bigquery.QueryJobConfig(use_query_cache=False,dry_run=dry_run_flag,default_dataset='{}.{}'.format(default_project,default_dataset))
     resp_query_run_rec = []
+    st_time= time.time()
+    print(st_time)
     for i in range(1,100):
         print('Run job {}'.format(str(i)))
         f=open(query_path.format(str(i)))
@@ -91,6 +116,11 @@ if __name__ == '__main__':
             rec['client_end_time']=end_time
             rec['client_duration']=duration
             resp_query_run_rec.append(rec)
+
+    ed_time=time.time()
+    print(ed_time)
+    job_dur=ed_time - st_time
+    print("job elapse {} seconds".format(str(job_dur)))
 
     if not dry_run_flag:
         client.insert_rows_json(full_result_table,resp_query_run_rec)
