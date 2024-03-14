@@ -20,13 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="92a03f30-5245-4714-b1e0-8b6f4c46ab35" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Bigquery_schema_json/tpcds_data_320_1T_iceberg_with_par_v1" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app_access_row.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/complex_struct_sample.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tpcds_data_320_1T_iceberg_no_par_v1" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tpcds_data_320_1T_iceberg_with_par_v1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grand_block_row.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grant_block_to_bq.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ssoaccess_row.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ssoaccess_to_bq.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tunnelblock_row.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tunnelblock_to_bq.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tpcds_query_execution.py" beforeDir="false" afterPath="$PROJECT_DIR$/tpcds_query_execution.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +58,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.complex_struct_sample">
+  <component name="RunManager" selected="Python.tunnelblock_to_bq">
     <configuration name="complex_struct_sample" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="gcp_python_code" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -73,48 +73,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/complex_struct_sample.py" />
       <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="dataflow_bole_logout_event_complex_Map" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="gcp_python_code" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/dataflow_bole_logout_event_complex_Map.py" />
-      <option name="PARAMETERS" value="--outputTable agolis-allen-first:experiment.dataflow_insert --stagingLocation gs://agolis-allen-first-dataflow --tempLocation gs://agolis-allen-first-dataflow --runner direct --inputTopic projects/agolis-allen-first/topics/demo" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="dataflow_bole_logout_event_complex_Map_unify_type" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="gcp_python_code" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/dataflow_bole_logout_event_complex_Map_unify_type.py" />
-      <option name="PARAMETERS" value="--outputTable agolis-allen-first:experiment.dataflow_insert --stagingLocation gs://agolis-allen-first-dataflow --tempLocation gs://agolis-allen-first-dataflow --runner direct --inputTopic projects/agolis-allen-first/topics/demo" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -143,6 +101,48 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="grant_block_to_bq" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="gcp_python_code" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/grant_block_to_bq.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="ssoaccess_to_bq" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="gcp_python_code" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ssoaccess_to_bq.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="tpcds_query_execution" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="gcp_python_code" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -164,7 +164,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="tpcds_schema_trans_json2string" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="tunnelblock_to_bq" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="gcp_python_code" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -176,7 +176,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tpcds_schema_trans_json2string.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tunnelblock_to_bq.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -187,19 +187,19 @@
     </configuration>
     <list>
       <item itemvalue="Python.dataflow_word_count" />
-      <item itemvalue="Python.dataflow_bole_logout_event_complex_Map" />
-      <item itemvalue="Python.dataflow_bole_logout_event_complex_Map_unify_type" />
-      <item itemvalue="Python.tpcds_query_execution" />
-      <item itemvalue="Python.tpcds_schema_trans_json2string" />
       <item itemvalue="Python.complex_struct_sample" />
+      <item itemvalue="Python.tpcds_query_execution" />
+      <item itemvalue="Python.grant_block_to_bq" />
+      <item itemvalue="Python.ssoaccess_to_bq" />
+      <item itemvalue="Python.tunnelblock_to_bq" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.tunnelblock_to_bq" />
+        <item itemvalue="Python.ssoaccess_to_bq" />
+        <item itemvalue="Python.grant_block_to_bq" />
         <item itemvalue="Python.complex_struct_sample" />
         <item itemvalue="Python.tpcds_query_execution" />
-        <item itemvalue="Python.tpcds_schema_trans_json2string" />
-        <item itemvalue="Python.dataflow_bole_logout_event_complex_Map_unify_type" />
-        <item itemvalue="Python.dataflow_bole_logout_event_complex_Map" />
       </list>
     </recent_temporary>
   </component>
@@ -227,47 +227,38 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="563" y="316" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1699596678166">
+    <state width="1771" height="295" key="GridCell.Tab.0.bottom" timestamp="1710410780998">
       <screen x="0" y="25" width="1792" height="1010" />
     </state>
-    <state x="563" y="316" key="#com.intellij.fileTypes.FileTypeChooser/0.25.1792.1010/-410.-1415.2560.1415@0.25.1792.1010" timestamp="1698828681036" />
-    <state x="563" y="316" key="#com.intellij.fileTypes.FileTypeChooser/0.25.1792.1010@0.25.1792.1010" timestamp="1699596678166" />
-    <state width="1771" height="295" key="GridCell.Tab.0.bottom" timestamp="1707115109832">
+    <state width="1771" height="295" key="GridCell.Tab.0.bottom/0.25.1792.1010/-410.-1415.2560.1415@0.25.1792.1010" timestamp="1710410780998" />
+    <state width="1771" height="295" key="GridCell.Tab.0.center" timestamp="1710410780998">
       <screen x="0" y="25" width="1792" height="1010" />
     </state>
-    <state width="1771" height="295" key="GridCell.Tab.0.bottom/0.25.1792.1010/-410.-1415.2560.1415@0.25.1792.1010" timestamp="1707115109832" />
-    <state width="1771" height="295" key="GridCell.Tab.0.bottom/0.25.1792.1010@0.25.1792.1010" timestamp="1699360085661" />
-    <state width="1771" height="295" key="GridCell.Tab.0.center" timestamp="1707115109831">
+    <state width="1771" height="295" key="GridCell.Tab.0.center/0.25.1792.1010/-410.-1415.2560.1415@0.25.1792.1010" timestamp="1710410780998" />
+    <state width="1771" height="295" key="GridCell.Tab.0.left" timestamp="1710410780997">
       <screen x="0" y="25" width="1792" height="1010" />
     </state>
-    <state width="1771" height="295" key="GridCell.Tab.0.center/0.25.1792.1010/-410.-1415.2560.1415@0.25.1792.1010" timestamp="1707115109831" />
-    <state width="1771" height="295" key="GridCell.Tab.0.center/0.25.1792.1010@0.25.1792.1010" timestamp="1699360085660" />
-    <state width="1771" height="295" key="GridCell.Tab.0.left" timestamp="1707115109831">
+    <state width="1771" height="295" key="GridCell.Tab.0.left/0.25.1792.1010/-410.-1415.2560.1415@0.25.1792.1010" timestamp="1710410780997" />
+    <state width="1771" height="295" key="GridCell.Tab.0.right" timestamp="1710410780998">
       <screen x="0" y="25" width="1792" height="1010" />
     </state>
-    <state width="1771" height="295" key="GridCell.Tab.0.left/0.25.1792.1010/-410.-1415.2560.1415@0.25.1792.1010" timestamp="1707115109831" />
-    <state width="1771" height="295" key="GridCell.Tab.0.left/0.25.1792.1010@0.25.1792.1010" timestamp="1699360085660" />
-    <state width="1771" height="295" key="GridCell.Tab.0.right" timestamp="1707115109831">
+    <state width="1771" height="295" key="GridCell.Tab.0.right/0.25.1792.1010/-410.-1415.2560.1415@0.25.1792.1010" timestamp="1710410780998" />
+    <state width="1771" height="349" key="GridCell.Tab.1.bottom" timestamp="1710408721619">
       <screen x="0" y="25" width="1792" height="1010" />
     </state>
-    <state width="1771" height="295" key="GridCell.Tab.0.right/0.25.1792.1010/-410.-1415.2560.1415@0.25.1792.1010" timestamp="1707115109831" />
-    <state width="1771" height="295" key="GridCell.Tab.0.right/0.25.1792.1010@0.25.1792.1010" timestamp="1699360085661" />
-    <state width="1771" height="385" key="GridCell.Tab.1.bottom" timestamp="1707114173612">
+    <state width="1771" height="349" key="GridCell.Tab.1.bottom/0.25.1792.1010/-410.-1415.2560.1415@0.25.1792.1010" timestamp="1710408721619" />
+    <state width="1771" height="349" key="GridCell.Tab.1.center" timestamp="1710408721619">
       <screen x="0" y="25" width="1792" height="1010" />
     </state>
-    <state width="1771" height="385" key="GridCell.Tab.1.bottom/0.25.1792.1010/-410.-1415.2560.1415@0.25.1792.1010" timestamp="1707114173612" />
-    <state width="1771" height="385" key="GridCell.Tab.1.center" timestamp="1707114173612">
+    <state width="1771" height="349" key="GridCell.Tab.1.center/0.25.1792.1010/-410.-1415.2560.1415@0.25.1792.1010" timestamp="1710408721619" />
+    <state width="1771" height="349" key="GridCell.Tab.1.left" timestamp="1710408721618">
       <screen x="0" y="25" width="1792" height="1010" />
     </state>
-    <state width="1771" height="385" key="GridCell.Tab.1.center/0.25.1792.1010/-410.-1415.2560.1415@0.25.1792.1010" timestamp="1707114173612" />
-    <state width="1771" height="385" key="GridCell.Tab.1.left" timestamp="1707114173612">
+    <state width="1771" height="349" key="GridCell.Tab.1.left/0.25.1792.1010/-410.-1415.2560.1415@0.25.1792.1010" timestamp="1710408721618" />
+    <state width="1771" height="349" key="GridCell.Tab.1.right" timestamp="1710408721619">
       <screen x="0" y="25" width="1792" height="1010" />
     </state>
-    <state width="1771" height="385" key="GridCell.Tab.1.left/0.25.1792.1010/-410.-1415.2560.1415@0.25.1792.1010" timestamp="1707114173612" />
-    <state width="1771" height="385" key="GridCell.Tab.1.right" timestamp="1707114173612">
-      <screen x="0" y="25" width="1792" height="1010" />
-    </state>
-    <state width="1771" height="385" key="GridCell.Tab.1.right/0.25.1792.1010/-410.-1415.2560.1415@0.25.1792.1010" timestamp="1707114173612" />
+    <state width="1771" height="349" key="GridCell.Tab.1.right/0.25.1792.1010/-410.-1415.2560.1415@0.25.1792.1010" timestamp="1710408721619" />
     <state x="405" y="166" key="SettingsEditor" timestamp="1705108543020">
       <screen x="0" y="25" width="1792" height="1010" />
     </state>
@@ -366,6 +357,21 @@
           <line>66</line>
           <option name="timeStamp" value="152" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/grant_block_to_bq.py</url>
+          <line>52</line>
+          <option name="timeStamp" value="156" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/grant_block_to_bq.py</url>
+          <line>30</line>
+          <option name="timeStamp" value="159" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/grant_block_to_bq.py</url>
+          <line>114</line>
+          <option name="timeStamp" value="162" />
+        </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
@@ -377,7 +383,7 @@
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
-        <watch expression="body['hitDictLevel']" language="Python" />
+        <watch expression="re.findall(r&quot;grantblock_(.*?).txt&quot;, filename)" language="Python" />
         <watch expression="element[1]['user_id']" language="Python" />
       </configuration>
     </watches-manager>

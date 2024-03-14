@@ -1,0 +1,15 @@
+
+syntax = "proto2";
+
+message  tunnelBlockMsg{
+
+  message tunnelBlockRec {
+    optional string ip = 1;
+    optional string target = 2;
+    optional string username = 3;
+  }
+
+  optional string userkey =1;
+  repeated tunnelBlockRec rec = 2;
+  optional string dt=3;
+}

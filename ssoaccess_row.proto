@@ -1,0 +1,19 @@
+
+syntax = "proto2";
+
+message  ssoAccessMsg{
+
+  message ssoAccessRec {
+    optional string authLevel = 1;
+    optional string geoCity = 2;
+    optional string geoCountry = 3;
+    optional string geoRegion = 4;
+    optional string ip = 5;
+    optional string userAgent = 6;
+    optional string username = 7;
+  }
+
+  optional string userkey =1;
+  repeated ssoAccessRec rec = 2;
+  optional string dt=3;
+}

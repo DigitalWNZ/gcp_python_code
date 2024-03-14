@@ -1,0 +1,18 @@
+
+syntax = "proto2";
+
+message  grantBlockMsg{
+
+  message grantBlockRec {
+    optional string geoCity = 1;
+    optional string geoCountry = 2;
+    optional string geoRegion = 3;
+    optional string ip = 4;
+    optional string target = 5;
+    optional string username = 6;
+  }
+
+  optional string userkey =1;
+  repeated grantBlockRec rec = 2;
+  optional string dt=3;
+}
