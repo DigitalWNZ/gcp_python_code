@@ -20,16 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="92a03f30-5245-4714-b1e0-8b6f4c46ab35" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/db_interview/qn1.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db_interview/qn2_python.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db_interview/qn2_sql.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db_interview/qn5_ml.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db_interview/quiz_2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db_interview/quiz_3.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db_interview/quiz_practice.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/download.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testet.py" beforeDir="false" afterPath="$PROJECT_DIR$/testet.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/download.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
