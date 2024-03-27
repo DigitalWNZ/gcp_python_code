@@ -1,0 +1,30 @@
+**Choosing SQL, Python (PySpark), or Scala for Spark: Performance Considerations**
+
+*** SQL:  **
+- Spark SQL has become significantly faster.  In spark 3.0, both performance and ANSI compatibility are greatly improved.
+- Coming to the DataFrame API, SQL operations get executed in the JVM which is similar to other Spark - operations.
+- It's great for structured data.
+
+*** Python (PySpark): **
+- Traditionally slower than JVM languages, PySpark's performance has significantly improved.
+- It now leverages Spark SQL under the hood.
+- PySpark shines in data science and ease of use.
+
+*** Scala: **
+- Spark's native language, Scala often provides the best raw performance, especially for large datasets and low-level operations.
+- Its type safety and functional style aid in complex data tasks.
+- DataFrame operations are often comparable between Scala and PySpark
+
+In Short, while performance differences are narrowing, Scala may still hold an edge for speed-critical, large-scale tasks. PySpark excels in data science and user-friendliness. SQL is powerful for structured queries that fit its model.
+
+In addition, please remember project specifics and team skills are crucial factors alongside performance.
+Factors like data serialization and memory management also play a role in Spark performance, independent of your language choice.
+
+
+**Choosing RDDs or DataFrames in Apache Spark: Performance consideration:**
+
+* RDDs (Resilient Distributed Datasets):  RDDs are Spark's foundational data structure. They offer low-level control over distributed collections of objects but lack built-in optimizations.
+
+
+* DataFrames: DataFrames are a higher-level abstraction built upon RDDs. They introduce structure (schemas), SQL-like query abilities, and optimizations for enhanced performance.
+DataFrame APIs are built on top of the Spark SQL engine, it uses Catalyst to generate an optimized logical and physical query plan to provide space and speed efficiency.
