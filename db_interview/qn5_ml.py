@@ -1,3 +1,6 @@
+# refer to
+# https://docs.databricks.com/en/_extras/notebooks/source/gbt-regression.html
+# https://docs.databricks.com/en/machine-learning/train-model/mllib.html
 # Download bike sharing data from github and save it locally.
 import pandas as pd
 url = 'https://raw.githubusercontent.com/deep-learning-with-pytorch/dlwpt-code/master/data/p1ch4/bike-sharing-dataset/hour.csv'
