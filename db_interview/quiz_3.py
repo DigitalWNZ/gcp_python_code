@@ -59,7 +59,17 @@ query_result = _run_query(queryA)
 partA = f"""records={query_result[0][0]}"""
 
 ### Part B
-# This algorithm leads to county=SENECA, avgVisitors=2.9
+'''
+For question part B, we introduced two approaches which happen to lead to same result
+- Approach 1: 
+        step 1. Count number of visitor by each birth in respective county
+        step 2. Caculate average number of visitors by county
+- Approach 2: 
+        step 1. Count total number of visitor and total number of birth by county
+        step 2. average number of vistors = (total number of visitor)/(total number of birth)
+'''
+
+# Approach 1: result is "county=SENECA, avgVisitors=2.9"
 queryB = """
         -- Write your query here
         with aggregation_by_birth as (
@@ -83,7 +93,7 @@ queryB = """
         limit 1
         """
 
-# This algorithm leads to county=SENECA, avgVisitors=2.9
+# Approach 2: result is "county=SENECA, avgVisitors=2.9"
 queryB = """
         -- Write your query here
         with aggregation_by_county as (
@@ -122,22 +132,6 @@ queryC = """
                 avg(avg_visitors_age_by_birth) as avg_visitors_age_by_county
         from aggregation_by_birth 
         """
-# # This algorithm leads to avgVisitorAge=86.25943110752472        #
-# queryC = """
-#         -- Write your query here
-#         with aggregation_by_county as (
-#                 select
-#                         county,
-#                         sum(visitor_age) as sum_visitor_age_by_county,
-#                         count(Distinct sid) as num_birth_by_county
-#                 from baby_visitors_data
-#                 where county='KINGS'
-#                 group by 1
-#         )
-#         select
-#                 sum_visitor_age_by_county/num_birth_by_county as avg_visitors_age_by_county
-#         from aggregation_by_county
-#         """
 query_result = _run_query(queryC)
 partC = f"""avgVisitorAge={query_result[0][0]}"""
 
