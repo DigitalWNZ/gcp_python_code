@@ -20,9 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="92a03f30-5245-4714-b1e0-8b6f4c46ab35" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/db_interview/Binary_classification_sample.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db_interview/keras_sample.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db_interview/mlflow_sample.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db_interview/mlib_for_streaming.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_interview/qn5_ml.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_interview/qn5_ml.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_interview/quiz_3.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_interview/quiz_3.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
