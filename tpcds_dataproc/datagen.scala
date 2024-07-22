@@ -1,7 +1,7 @@
 import com.databricks.spark.sql.perf.tpcds.TPCDSTables
 
 val rootDir = "<ROOT_DIR>"
-val dsdgenDir = "/opt/oss_util/tpcds_dataproc/tpcds-kit/tools"
+val dsdgenDir = "/opt/gcp_python_code/tpcds_dataproc/tpcds-kit/tools"
 val scaleFactor = "3000"
 val format = "parquet"
 val databaseName = "tpcds3000"

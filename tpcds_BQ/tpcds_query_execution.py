@@ -33,8 +33,8 @@ if __name__ == '__main__':
     query_category = 'Bigquery TPCDS for IGG'
 
     query_path= 'generated_query_320/{}.sql'
-    query_run_times=1
-    dry_run_flag=True
+    query_run_times=5
+    dry_run_flag=False
     client=bigquery.Client(default_project)
 
     create_table_sql = 'create table if not exists `{}` (' \

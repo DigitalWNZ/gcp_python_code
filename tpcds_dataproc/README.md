@@ -35,8 +35,8 @@ gcloud metastore services create ${DPMS_NAME} \
 
 ## Create dataproc cluster
 ```bash
-git clone https://github.com/DigitalWNZ/oss_util.git
-gsutil cp oss_util/tpcds_dataproc/tpcds_bootstrap.sh gs://${DATAPROC_BUCKET}/bootstrap/
+git clone https://github.com/DigitalWNZ/gcp_python_code.git
+gsutil cp gcp_python_code/tpcds_dataproc/tpcds_bootstrap.sh gs://${DATAPROC_BUCKET}/bootstrap/
 
 --My version
 gcloud dataproc clusters create ${CLUSTER_NAME} \
@@ -118,7 +118,7 @@ gcloud dataproc clusters create ${CLUSTER_NAME} \
 After dataproc cluster is deployed, login with SSH to the master node of the Dataproc cluster. Suggest to run the command in tmux or screen session because it takes several minitues to hours to generate TPC-DS 1000GB data
 
 ```bash
-cd /opt/oss_util/tpcds_dataproc
+cd /opt/gcp_python_code/tpcds_dataproc
 spark-shell --jars spark-sql-perf_2.12-0.5.1-SNAPSHOT.jar -I datagen.scala
 ```
 
@@ -134,7 +134,7 @@ Please bear in mind the table will be created in the datagen process.
 ## Reuse existing data 
 If you only have data without corresponding metastore, You need to run the following script to create tables before starting the TPC-DS benchmark. Make sure to change the variables in `create_table.scala` including: rootDir, dsdgenDir, scaleFactor, format, databaseName
 ```bash
-cd /opt/oss_util/tpcds_dataproc
+cd /opt/gcp_python_code/tpcds_dataproc
 spark-shell \
   --jars spark-sql-perf_2.12-0.5.1-SNAPSHOT.jar \
   --driver-memory 8192M \
@@ -148,7 +148,7 @@ spark-shell \
 After TPC-DS data is generated, run the following command to run tests. Suggest to run in tmux or screen session because it takes several minitues to hours to run TPC-DS tests depending on number of executors. Please change `num-executors` according to your worker vcores.
 
 ```bash
-cd /opt/oss_util/tpcds_dataproc
+cd /opt/gcp_python_code/tpcds_dataproc
 --My version
 spark-shell \
   --jars spark-sql-perf_2.12-0.5.1-SNAPSHOT.jar \
