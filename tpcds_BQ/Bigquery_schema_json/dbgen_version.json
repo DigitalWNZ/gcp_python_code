@@ -1,0 +1,6 @@
+[
+  {"name":"dv_version","type":"STRING"},
+  {"name":"dv_create_date","type":"DATE"},
+  {"name":"dv_create_time","type":"TIME"},
+  {"name":"dv_cmdline_args","type":"STRING"}
+]

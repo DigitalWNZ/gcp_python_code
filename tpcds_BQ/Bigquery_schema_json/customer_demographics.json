@@ -1,0 +1,11 @@
+[
+  {"name":"cd_demo_sk","type":"INTEGER"},
+  {"name":"cd_gender","type":"STRING"},
+  {"name":"cd_marital_status","type":"STRING"},
+  {"name":"cd_education_status","type":"STRING"},
+  {"name":"cd_purchase_estimate","type":"INTEGER"},
+  {"name":"cd_credit_rating","type":"STRING"},
+  {"name":"cd_dep_count","type":"INTEGER"},
+  {"name":"cd_dep_employed_count","type":"INTEGER"},
+  {"name":"cd_dep_college_count","type":"INTEGER"}
+]

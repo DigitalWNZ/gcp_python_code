@@ -9,7 +9,7 @@ if __name__ == '__main__':
 
     print('Create table if not exist')
     project='agolis-allen-first'
-    table='agolis-allen-first.IGG.dp_tpcds_v1'
+    table='agolis-allen-first.IGG.emr_dp_tpcds_v1'
     client = bigquery.Client(project=project)
     create_table_sql = 'create table if not exists `{}` (' \
                        'ts int64,' \
@@ -26,7 +26,7 @@ if __name__ == '__main__':
 
     print('Parse json result')
     rows=[]
-    json_file=open('/Users/wangez/Downloads/part-00000-303f2546-5580-42f2-947d-eb0dca8f312e-c000.json','r')
+    json_file=open('/Users/wangez/Downloads/part-00000-737b5867-1017-4ee0-8d8f-2fecb15f9558-c000.json','r')
     for line in json_file:
         dict_line=json.loads(line)
         results=dict_line['results']

@@ -1,5 +1,0 @@
-[
-  {"name":"r_reason_sk","type":"INTEGER"},
-  {"name":"r_reason_id","type":"STRING"},
-  {"name":"r_reason_desc","type":"STRING"}
-]

@@ -1,0 +1,7 @@
+[
+  {"name":"hd_demo_sk","type":"INTEGER"},
+  {"name":"hd_income_band_sk","type":"INTEGER"},
+  {"name":"hd_buy_potential","type":"STRING"},
+  {"name":"hd_dep_count","type":"INTEGER"},
+  {"name":"hd_vehicle_count","type":"INTEGER"}
+]
