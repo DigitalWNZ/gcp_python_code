@@ -1,6 +1,6 @@
 # Spark TPC-DS on Bigquery
 ## Create Reservation (0-100) in us-central1 
-## Update [query execution orchestration program](https://github.com/DigitalWNZ/gcp_python_code/blob/main/tpcds_query_execution.py)
+## Update [query execution orchestration program](https://github.com/DigitalWNZ/gcp_python_code/blob/main/tpcds_BQ/tpcds_query_execution.py)
 Change the following variables in the orchestration program
 - default_project: The project to store data is used as default project to run queries. 
 - default_dateset: The dataset contains TPCDS Data
