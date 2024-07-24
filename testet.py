@@ -18,25 +18,30 @@
 #
 # print("Updated config: '{}'".format(transfer_config.name))
 
+#
+# def find_61st_number_optimized():
+#     numbers = [1, 3, 9, 27, 81, 243]
+#     sums = []
+#
+#     # 生成所有可能的二进制组合 (排除全0)
+#     for i in range(1, 2**len(numbers)):
+#         binary_str = format(i, '06b')  # 格式化为6位二进制字符串
+#         s = 0
+#         for j in range(len(numbers)):
+#             if binary_str[j] == '1':
+#                 s += numbers[j]
+#         sums.append(s)
+#
+#     # 对数字和排序
+#     sums.sort()
+#
+#     # 找到第61个数字
+#     return sums[60]
+#
+# result = find_61st_number_optimized()
+# print("第61个数是:", result)
 
-def find_61st_number_optimized():
-    numbers = [1, 3, 9, 27, 81, 243]
-    sums = []
 
-    # 生成所有可能的二进制组合 (排除全0)
-    for i in range(1, 2**len(numbers)):
-        binary_str = format(i, '06b')  # 格式化为6位二进制字符串
-        s = 0
-        for j in range(len(numbers)):
-            if binary_str[j] == '1':
-                s += numbers[j]
-        sums.append(s)
-
-    # 对数字和排序
-    sums.sort()
-
-    # 找到第61个数字
-    return sums[60]
-
-result = find_61st_number_optimized()
-print("第61个数是:", result)
+import datetime
+x=datetime.datetime.fromtimestamp(1721633279.598758).strftime('%Y-%m-%d %H:%M:%S')
+print(x)

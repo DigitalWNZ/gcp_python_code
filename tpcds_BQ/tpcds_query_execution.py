@@ -33,8 +33,8 @@ if __name__ == '__main__':
     query_category = 'Bigquery TPCDS for IGG'
 
     query_path= 'generated_query_320/{}.sql'
-    query_run_times=5
-    dry_run_flag=False
+    query_run_times=1
+    dry_run_flag=True
     client=bigquery.Client(default_project)
 
     create_table_sql = 'create table if not exists `{}` (' \
@@ -80,6 +80,31 @@ if __name__ == '__main__':
             rec['client_duration']=duration
             resp_query_run_rec.append(rec)
 
+    for i in ['14b','23b','24b','39b']:
+        print('Run job {}'.format(str(i)))
+        f=open(query_path.format(i))
+        sql=f.read()
+
+        # resp_query_run_rec=[]
+        for x in range(0,query_run_times):
+            print('Run job {} for the {} time'.format(str(i),str(x+1)))
+            job=client.query(sql,job_config=job_config)
+            start_time = time.time()
+            job_id=job.job_id
+            res=job.result()
+            end_time=time.time()
+            duration = int((end_time - start_time) * 1000)
+
+            rec={}
+            rec['run_id']=run_id
+            rec['category']=query_category
+            rec['sn']=i
+            rec['run_sn']=x
+            rec['job_id']=job_id
+            rec['client_start_time']=start_time
+            rec['client_end_time']=end_time
+            rec['client_duration']=duration
+            resp_query_run_rec.append(rec)
     ed_time=time.time()
     print(ed_time)
     job_dur=ed_time - st_time
