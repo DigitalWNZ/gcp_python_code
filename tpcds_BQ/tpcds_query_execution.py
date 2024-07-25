@@ -20,8 +20,8 @@ if __name__ == '__main__':
     result_dataset = 'tpcds_data_320_1T_v1_cluster'
     # result_dataset='tpcds_data_320_1T_iceberg_BLMT_v1'
 
-    result_table='tpcds_result_20240722'
-    cross_result_table='tpcds_cross_result_20240722'
+    result_table='tpcds_result_20240725'
+    cross_result_table='tpcds_cross_result_20240725'
     # result_table='tpcds_result_cmeta'
     # cross_result_table='tpcds_cross_result_cmeta'
 
@@ -29,12 +29,12 @@ if __name__ == '__main__':
     full_cross_result_table = '{}.{}.{}'.format(result_project, result_dataset, cross_result_table)
 
 
-    run_id='20270722'
+    run_id='20240725'
     query_category = 'Bigquery TPCDS for IGG'
 
     query_path= 'generated_query_320/{}.sql'
     query_run_times=1
-    dry_run_flag=True
+    dry_run_flag=False
     client=bigquery.Client(default_project)
 
     create_table_sql = 'create table if not exists `{}` (' \
@@ -54,7 +54,8 @@ if __name__ == '__main__':
     resp_query_run_rec = []
     st_time= time.time()
     print(st_time)
-    for i in range(1,100):
+    # for i in range(1,100):
+    for i in range(1, 3):
         print('Run job {}'.format(str(i)))
         f=open(query_path.format(str(i)))
         sql=f.read()
@@ -80,7 +81,8 @@ if __name__ == '__main__':
             rec['client_duration']=duration
             resp_query_run_rec.append(rec)
 
-    for i in ['14b','23b','24b','39b']:
+    # for i in ['14b','23b','24b','39b']:
+    for i in ['14b']:
         print('Run job {}'.format(str(i)))
         f=open(query_path.format(i))
         sql=f.read()
@@ -111,6 +113,10 @@ if __name__ == '__main__':
     print("job elapse {} seconds".format(str(job_dur)))
 
     if not dry_run_flag:
+        with open('run_data_{}.txt'.format(run_id), 'w') as f:
+            for line in resp_query_run_rec:
+                f.write(f"{line}\n")
+
         client.insert_rows_json(full_result_table,resp_query_run_rec)
         job_stat_sql = 'create or replace table `{}` as select \n' \
                        'a.run_id,a.category,a.sn,a.run_sn,a.job_id,a.client_start_time,a.client_end_time,a.client_duration,\n' \

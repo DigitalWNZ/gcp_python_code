@@ -188,9 +188,14 @@ spark-shell \
 By default, the benchmark result will be stored in ```/results/timestamp=1721266172526``` on hdfs system. The file name like part-00000-303f2546-5580-42f2-947d-eb0dca8f312e-c000.json\
 Run the following 2 commands to copy the file to localDisk or GCS.
 ```
-hdfs dfs -ls /results/timestamp=1721266172526
-sudo hdfs dfs -copyToLocal /results/timestamp=1721266172526/* .
-gsutil cp part-00000-303f2546-5580-42f2-947d-eb0dca8f312e-c000.json gs://agolis-allen-first-tpcds
+hdfs dfs -ls /results/timestamp=1721891697851
+sudo hdfs dfs -copyToLocal /results/timestamp=1721891697851/* .
+sudo mv part-00000-5c2c99e7-d98b-4976-bdcd-d7d412f2ef88-c000.json dp_1T2c26g.json
+gsutil cp dp_1T2c26g.json gs://agolis-allen-first-tpcds
+```
+then copy the json file to VM where the data will be parsed. 
+```
+gsutil cp  gs://agolis-allen-first-tpcds/dp_1T2c26g.json .
 ```
 
 Once you got access to the file, run this [python program](https://github.com/DigitalWNZ/gcp_python_code/blob/main/parse_tpcds_result.py) to parse the json data and ingested into Bigquery. \
@@ -202,7 +207,6 @@ with base as (
     sum(executionTime)/60000 as totalExecutionTime,
     sum(parsingTime + analysisTime + optimizationTime + planningTime + executionTime)/60000 as totalTime
   FROM `agolis-allen-first.IGG.dp_tpcds_v1` 
-  where name <> 'ss_max-v2.4'
   group by 1
 )
 select 
