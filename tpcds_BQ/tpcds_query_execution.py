@@ -20,8 +20,8 @@ if __name__ == '__main__':
     result_dataset = 'tpcds_data_320_1T_v1_cluster'
     # result_dataset='tpcds_data_320_1T_iceberg_BLMT_v1'
 
-    result_table='tpcds_result_20240725'
-    cross_result_table='tpcds_cross_result_20240725'
+    result_table='tpcds_result_20240726'
+    cross_result_table='tpcds_cross_result_20240726'
     # result_table='tpcds_result_cmeta'
     # cross_result_table='tpcds_cross_result_cmeta'
 
@@ -29,7 +29,7 @@ if __name__ == '__main__':
     full_cross_result_table = '{}.{}.{}'.format(result_project, result_dataset, cross_result_table)
 
 
-    run_id='20240725'
+    run_id='20240726'
     query_category = 'Bigquery TPCDS for IGG'
 
     query_path= 'generated_query_320/{}.sql'
@@ -40,7 +40,7 @@ if __name__ == '__main__':
     create_table_sql = 'create table if not exists `{}` (' \
                        'run_id string,' \
                        'category string,' \
-                       'sn int64,' \
+                       'sn string,' \
                        'run_sn int64,' \
                        'job_id string,' \
                        'client_start_time timestamp,' \
@@ -54,8 +54,7 @@ if __name__ == '__main__':
     resp_query_run_rec = []
     st_time= time.time()
     print(st_time)
-    # for i in range(1,100):
-    for i in range(1, 3):
+    for i in range(1,100):
         print('Run job {}'.format(str(i)))
         f=open(query_path.format(str(i)))
         sql=f.read()
@@ -81,8 +80,7 @@ if __name__ == '__main__':
             rec['client_duration']=duration
             resp_query_run_rec.append(rec)
 
-    # for i in ['14b','23b','24b','39b']:
-    for i in ['14b']:
+    for i in ['14b','23b','24b','39b']:
         print('Run job {}'.format(str(i)))
         f=open(query_path.format(i))
         sql=f.read()

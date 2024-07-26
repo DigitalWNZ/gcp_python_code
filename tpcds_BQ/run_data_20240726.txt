@@ -1,0 +1,3 @@
+{'run_id': '20240726', 'category': 'Bigquery TPCDS for IGG', 'sn': 1, 'run_sn': 0, 'job_id': 'e4428aee-3b32-4cba-b486-b3d490b83e1a', 'client_start_time': 1721975644.050687, 'client_end_time': 1721975646.965464, 'client_duration': 2914}
+{'run_id': '20240726', 'category': 'Bigquery TPCDS for IGG', 'sn': 2, 'run_sn': 0, 'job_id': '27242b77-7e05-4665-aa52-80ff8af3038a', 'client_start_time': 1721975648.671079, 'client_end_time': 1721975663.87244, 'client_duration': 15201}
+{'run_id': '20240726', 'category': 'Bigquery TPCDS for IGG', 'sn': '14b', 'run_sn': 0, 'job_id': '4b96298a-445f-4386-bc72-cd2fec605f01', 'client_start_time': 1721975665.567242, 'client_end_time': 1721975703.2807848, 'client_duration': 37713}
