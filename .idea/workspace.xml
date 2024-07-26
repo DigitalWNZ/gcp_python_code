@@ -20,9 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="92a03f30-5245-4714-b1e0-8b6f4c46ab35" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/tpcds_BQ/parse_json_result.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testet.py" beforeDir="false" afterPath="$PROJECT_DIR$/testet.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tpcds_BQ/tpcds_query_execution.py" beforeDir="false" afterPath="$PROJECT_DIR$/tpcds_BQ/tpcds_query_execution.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tpcds_dataproc/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/tpcds_dataproc/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tpcds_dataproc/parse_tpcds_result.py" beforeDir="false" afterPath="$PROJECT_DIR$/tpcds_dataproc/parse_tpcds_result.py" afterDir="false" />
     </list>
@@ -60,7 +59,7 @@
       <recent name="$PROJECT_DIR$/tpcds_BQ" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.parse_tpcds_result">
+  <component name="RunManager" selected="Python.parse_json_result">
     <configuration name="dataflow_word_count" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="gcp_python_code" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -82,7 +81,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="formular_generator" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="parse_json_result" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="gcp_python_code" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -90,11 +89,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tpcds_BQ" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/formular_generator.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tpcds_BQ/parse_json_result.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -189,19 +188,19 @@
     </configuration>
     <list>
       <item itemvalue="Python.dataflow_word_count" />
-      <item itemvalue="Python.formular_generator" />
       <item itemvalue="Python.testet" />
       <item itemvalue="Python.parse_tpcds_result" />
       <item itemvalue="Python.tpcds_query_execution" />
       <item itemvalue="Python.tpcds_query_execution (1)" />
+      <item itemvalue="Python.parse_json_result" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.parse_json_result" />
         <item itemvalue="Python.parse_tpcds_result" />
         <item itemvalue="Python.tpcds_query_execution (1)" />
         <item itemvalue="Python.testet" />
         <item itemvalue="Python.tpcds_query_execution" />
-        <item itemvalue="Python.formular_generator" />
       </list>
     </recent_temporary>
   </component>
@@ -229,54 +228,54 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1771" height="295" key="GridCell.Tab.0.bottom" timestamp="1721910628450">
+    <state width="1771" height="349" key="GridCell.Tab.0.bottom" timestamp="1721927299486">
       <screen x="0" y="25" width="1792" height="1010" />
     </state>
-    <state width="1771" height="295" key="GridCell.Tab.0.bottom/-77.-1055.1920.1055/0.25.1792.1010@0.25.1792.1010" timestamp="1721910628450" />
+    <state width="1771" height="349" key="GridCell.Tab.0.bottom/-77.-1055.1920.1055/0.25.1792.1010@0.25.1792.1010" timestamp="1721927299486" />
     <state width="1771" height="295" key="GridCell.Tab.0.bottom/-77.-1055.1920.970/0.25.1792.1095@0.25.1792.1095" timestamp="1721910506836" />
     <state width="1771" height="295" key="GridCell.Tab.0.bottom/0.25.1792.1010/-75.-1055.1920.1055@0.25.1792.1010" timestamp="1721879428205" />
-    <state width="1771" height="295" key="GridCell.Tab.0.center" timestamp="1721910628449">
+    <state width="1771" height="349" key="GridCell.Tab.0.center" timestamp="1721927299485">
       <screen x="0" y="25" width="1792" height="1010" />
     </state>
-    <state width="1771" height="295" key="GridCell.Tab.0.center/-77.-1055.1920.1055/0.25.1792.1010@0.25.1792.1010" timestamp="1721910628449" />
+    <state width="1771" height="349" key="GridCell.Tab.0.center/-77.-1055.1920.1055/0.25.1792.1010@0.25.1792.1010" timestamp="1721927299485" />
     <state width="1771" height="295" key="GridCell.Tab.0.center/-77.-1055.1920.970/0.25.1792.1095@0.25.1792.1095" timestamp="1721910506835" />
     <state width="1771" height="295" key="GridCell.Tab.0.center/0.25.1792.1010/-75.-1055.1920.1055@0.25.1792.1010" timestamp="1721879428204" />
-    <state width="1771" height="295" key="GridCell.Tab.0.left" timestamp="1721910628448">
+    <state width="1771" height="349" key="GridCell.Tab.0.left" timestamp="1721927299484">
       <screen x="0" y="25" width="1792" height="1010" />
     </state>
-    <state width="1771" height="295" key="GridCell.Tab.0.left/-77.-1055.1920.1055/0.25.1792.1010@0.25.1792.1010" timestamp="1721910628448" />
+    <state width="1771" height="349" key="GridCell.Tab.0.left/-77.-1055.1920.1055/0.25.1792.1010@0.25.1792.1010" timestamp="1721927299484" />
     <state width="1771" height="295" key="GridCell.Tab.0.left/-77.-1055.1920.970/0.25.1792.1095@0.25.1792.1095" timestamp="1721910506835" />
     <state width="1771" height="295" key="GridCell.Tab.0.left/0.25.1792.1010/-75.-1055.1920.1055@0.25.1792.1010" timestamp="1721879428203" />
-    <state width="1771" height="295" key="GridCell.Tab.0.right" timestamp="1721910628450">
+    <state width="1771" height="349" key="GridCell.Tab.0.right" timestamp="1721927299485">
       <screen x="0" y="25" width="1792" height="1010" />
     </state>
-    <state width="1771" height="295" key="GridCell.Tab.0.right/-77.-1055.1920.1055/0.25.1792.1010@0.25.1792.1010" timestamp="1721910628450" />
+    <state width="1771" height="349" key="GridCell.Tab.0.right/-77.-1055.1920.1055/0.25.1792.1010@0.25.1792.1010" timestamp="1721927299485" />
     <state width="1771" height="295" key="GridCell.Tab.0.right/-77.-1055.1920.970/0.25.1792.1095@0.25.1792.1095" timestamp="1721910506836" />
     <state width="1771" height="295" key="GridCell.Tab.0.right/0.25.1792.1010/-75.-1055.1920.1055@0.25.1792.1010" timestamp="1721879428204" />
-    <state width="1771" height="349" key="GridCell.Tab.1.bottom" timestamp="1721897028902">
+    <state width="1771" height="349" key="GridCell.Tab.1.bottom" timestamp="1721927122583">
       <screen x="0" y="25" width="1792" height="1010" />
     </state>
-    <state width="1771" height="349" key="GridCell.Tab.1.bottom/-77.-1055.1920.1055/0.25.1792.1010@0.25.1792.1010" timestamp="1721897028902" />
+    <state width="1771" height="349" key="GridCell.Tab.1.bottom/-77.-1055.1920.1055/0.25.1792.1010@0.25.1792.1010" timestamp="1721927122583" />
     <state width="1771" height="349" key="GridCell.Tab.1.bottom/0.25.1792.1010/-75.-1055.1920.1055@0.25.1792.1010" timestamp="1721353544810" />
-    <state width="1771" height="349" key="GridCell.Tab.1.center" timestamp="1721897028902">
+    <state width="1771" height="349" key="GridCell.Tab.1.center" timestamp="1721927122582">
       <screen x="0" y="25" width="1792" height="1010" />
     </state>
-    <state width="1771" height="349" key="GridCell.Tab.1.center/-77.-1055.1920.1055/0.25.1792.1010@0.25.1792.1010" timestamp="1721897028902" />
+    <state width="1771" height="349" key="GridCell.Tab.1.center/-77.-1055.1920.1055/0.25.1792.1010@0.25.1792.1010" timestamp="1721927122582" />
     <state width="1771" height="349" key="GridCell.Tab.1.center/0.25.1792.1010/-75.-1055.1920.1055@0.25.1792.1010" timestamp="1721353544809" />
-    <state width="1771" height="349" key="GridCell.Tab.1.left" timestamp="1721897028902">
+    <state width="1771" height="349" key="GridCell.Tab.1.left" timestamp="1721927122582">
       <screen x="0" y="25" width="1792" height="1010" />
     </state>
-    <state width="1771" height="349" key="GridCell.Tab.1.left/-77.-1055.1920.1055/0.25.1792.1010@0.25.1792.1010" timestamp="1721897028902" />
+    <state width="1771" height="349" key="GridCell.Tab.1.left/-77.-1055.1920.1055/0.25.1792.1010@0.25.1792.1010" timestamp="1721927122582" />
     <state width="1771" height="349" key="GridCell.Tab.1.left/0.25.1792.1010/-75.-1055.1920.1055@0.25.1792.1010" timestamp="1721353544809" />
-    <state width="1771" height="349" key="GridCell.Tab.1.right" timestamp="1721897028902">
+    <state width="1771" height="349" key="GridCell.Tab.1.right" timestamp="1721927122583">
       <screen x="0" y="25" width="1792" height="1010" />
     </state>
-    <state width="1771" height="349" key="GridCell.Tab.1.right/-77.-1055.1920.1055/0.25.1792.1010@0.25.1792.1010" timestamp="1721897028902" />
+    <state width="1771" height="349" key="GridCell.Tab.1.right/-77.-1055.1920.1055/0.25.1792.1010@0.25.1792.1010" timestamp="1721927122583" />
     <state width="1771" height="349" key="GridCell.Tab.1.right/0.25.1792.1010/-75.-1055.1920.1055@0.25.1792.1010" timestamp="1721353544810" />
-    <state width="896" height="505" key="XDebugger.FullValuePopup" timestamp="1721826714731">
+    <state width="896" height="505" key="XDebugger.FullValuePopup" timestamp="1721926745657">
       <screen x="0" y="25" width="1792" height="1010" />
     </state>
-    <state width="896" height="505" key="XDebugger.FullValuePopup/-77.-1055.1920.1055/0.25.1792.1010@0.25.1792.1010" timestamp="1721826714731" />
+    <state width="896" height="505" key="XDebugger.FullValuePopup/-77.-1055.1920.1055/0.25.1792.1010@0.25.1792.1010" timestamp="1721926745657" />
     <state x="603" y="119" width="586" height="822" key="find.popup" timestamp="1721634531370">
       <screen x="0" y="25" width="1792" height="1010" />
     </state>
@@ -400,6 +399,11 @@
           <line>114</line>
           <option name="timeStamp" value="169" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/tpcds_BQ/parse_json_result.py</url>
+          <line>42</line>
+          <option name="timeStamp" value="171" />
+        </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
@@ -411,7 +415,7 @@
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
-        <watch expression="json.dumps(line)" language="Python" />
+        <watch expression="json.loads(line.replace(&quot;'&quot;,&quot;\&quot;&quot;))" language="Python" />
         <watch expression="line[6169914]" language="Python" />
       </configuration>
     </watches-manager>

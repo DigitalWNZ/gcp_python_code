@@ -38,7 +38,85 @@ gcloud metastore services create ${DPMS_NAME} \
 git clone https://github.com/DigitalWNZ/gcp_python_code.git
 gsutil cp gcp_python_code/tpcds_dataproc/tpcds_bootstrap.sh gs://${DATAPROC_BUCKET}/bootstrap/
 
---My version
+-- My version for C3D
+gcloud dataproc clusters create ${CLUSTER_NAME} \
+  --project ${PROJECT} \
+  --bucket ${DATAPROC_BUCKET} \
+  --region ${REGION} \
+  --subnet ${SUBNET} \
+  --dataproc-metastore=projects/${PROJECT}/locations/${REGION}/services/${DPMS_NAME} \
+  --scopes cloud-platform \
+  --enable-component-gateway \
+  --image-version 2.2-debian12 \
+  --num-masters 1 \
+  --num-workers 6 \
+  --num-secondary-workers 0 \
+  --master-machine-type c3d-standard-8 \
+  --master-boot-disk-type pd-ssd \
+  --master-boot-disk-size 500GB \
+  --worker-machine-type c3d-highmem-8 \
+  --worker-boot-disk-type pd-ssd \
+  --worker-boot-disk-size 800GB \
+  --initialization-actions gs://${DATAPROC_BUCKET}/bootstrap/tpcds_bootstrap.sh \
+  --metadata ROOT_DIR=${ROOT_DIR} \
+  --properties "hive:yarn.log-aggregation-enable=true" \
+  --properties "spark:spark.checkpoint.compress=true" \
+  --properties "spark:spark.eventLog.compress=true" \
+  --properties "spark:spark.eventLog.compression.codec=zstd" \
+  --properties "spark:spark.eventLog.rolling.enabled=true" \
+  --properties "spark:spark.io.compression.codec=zstd" \
+  --properties "spark:spark.sql.parquet.compression.codec=zstd" \
+  --properties "spark:spark.dataproc.enhanced.optimizer.enabled=true" \
+  --properties "spark:spark.dataproc.enhanced.execution.enabled=true" \
+  --properties "spark:spark.history.fs.logDirectory=gs://${DATAPROC_BUCKET}/phs/spark-job-history" 
+
+The command to create c3d cluster is different from c2d/n2d because 
+1. Local SSD can only attach to c3d-standard-*-lssd [ref](https://cloud.google.com/compute/docs/disks/add-local-ssd?hl=zh-cn)
+2. c3d-highmen-* does not support local SSD. 
+So there is no local SSD setting in cluster creation command. 
+
+--properties "dataproc:dataproc.cluster.caching.enabled=true" is not used because this property requires local_SSD + NVME which is not fully supported by c3d vm family. (https://cloud.google.com/dataproc/docs/concepts/cluster-caching)
+
+-- My version for C2D
+gcloud dataproc clusters create ${CLUSTER_NAME} \
+  --project ${PROJECT} \
+  --bucket ${DATAPROC_BUCKET} \
+  --region ${REGION} \
+  --subnet ${SUBNET} \
+  --dataproc-metastore=projects/${PROJECT}/locations/${REGION}/services/${DPMS_NAME} \
+  --scopes cloud-platform \
+  --enable-component-gateway \
+  --image-version 2.2-debian12 \
+  --num-masters 1 \
+  --num-workers 6 \
+  --num-secondary-workers 0 \
+  --master-machine-type c2d-standard-8 \
+  --master-min-cpu-platform "AMD Milan" \
+  --master-boot-disk-type pd-balanced \
+  --master-boot-disk-size 500GB \
+  --num-master-local-ssds 1 \
+  --master-local-ssd-interface NVME \
+  --worker-machine-type c2d-highmem-8 \
+  --worker-min-cpu-platform "AMD Milan" \
+  --worker-boot-disk-type pd-balanced \
+  --worker-boot-disk-size 500GB \
+  --num-worker-local-ssds 2 \
+  --worker-local-ssd-interface NVME \
+  --initialization-actions gs://${DATAPROC_BUCKET}/bootstrap/tpcds_bootstrap.sh \
+  --metadata ROOT_DIR=${ROOT_DIR} \
+  --properties "hive:yarn.log-aggregation-enable=true" \
+  --properties "spark:spark.checkpoint.compress=true" \
+  --properties "spark:spark.eventLog.compress=true" \
+  --properties "spark:spark.eventLog.compression.codec=zstd" \
+  --properties "spark:spark.eventLog.rolling.enabled=true" \
+  --properties "spark:spark.io.compression.codec=zstd" \
+  --properties "spark:spark.sql.parquet.compression.codec=zstd" \
+  --properties "spark:spark.dataproc.enhanced.optimizer.enabled=true" \
+  --properties "spark:spark.dataproc.enhanced.execution.enabled=true" \
+  --properties "spark:spark.history.fs.logDirectory=gs://${DATAPROC_BUCKET}/phs/spark-job-history" \
+  --properties "dataproc:dataproc.cluster.caching.enabled=true"
+
+-- My version for N2D
 gcloud dataproc clusters create ${CLUSTER_NAME} \
   --project ${PROJECT} \
   --bucket ${DATAPROC_BUCKET} \
