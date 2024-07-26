@@ -34,6 +34,7 @@ gcloud metastore services create ${DPMS_NAME} \
 ```
 
 ## Create dataproc cluster
+Make sure you have enough CPU quota in your project, otherwise you need to increase quota either via QIR or [CCA](https://cca-app.corp.google.com/)
 ```bash
 git clone https://github.com/DigitalWNZ/gcp_python_code.git
 gsutil cp gcp_python_code/tpcds_dataproc/tpcds_bootstrap.sh gs://${DATAPROC_BUCKET}/bootstrap/
